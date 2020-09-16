@@ -1,0 +1,22 @@
+<div class="fixed">
+  <div class="nav" id="js-navigation">
+    <div class="nav__container container">
+      <div class="nav__row row">
+        <div class="nav__logo col-6 col-md-2">
+          <button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger">
+            <span class="hamburger__lines"><span></span><span></span><span></span><span></span></span>
+          </button>
+          <div class="nav__logo-content">
+            <a href="{{site.url}}"><img src="{{options.logo}}" alt="{{site.name}}"></a>
+          </div>
+        </div>
+        <nav class="nav__menu col-12 col-md-8" id="js-navigation-menu">
+          {% include "menu.twig" with {'menu': menu.get_items} %}
+        </nav>
+        <div class="nav__addition col-6 col-md-2" id="js-nav-addition">
+          <a href="" class="nav__addition">+38 093 343 21 27</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
