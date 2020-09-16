@@ -1,0 +1,83 @@
+.home-greeting
+  position: relative
+
+  &__cloud
+    +a()
+
+  &__title
+    line-height: 1.1
+    color: $color-brand-2
+    margin-bottom: 15px
+    +ff('demi')
+
+  &__subtitle
+    margin-bottom: 30px
+    +ff('demi')
+
+  &__grid
+    display: grid
+    grid-gap: 30px
+
+  &__advantages
+    display: grid
+    grid-gap: 15px
+    list-style: none
+    padding-left: 0
+    margin-bottom: 0
+    color: #848484
+    font-size: 16px
+
+  &__advantage
+    position: relative
+    padding-left: 45px
+    svg
+      +a(0, null, null, 0)
+
+    &:nth-child(1) svg path
+      fill: $color-brand-2
+
+    &:nth-child(2) svg path
+      fill: $color-brand-3
+
+    &:nth-child(3) svg path
+      fill: $color-brand-1
+
+  &__form
+    background-color: $color-brand-1
+    color: #fff
+    padding: 30px
+    border-radius: 5px
+    &-title
+      font-size: 25px
+
+  +min(sm)
+    +py(120px)
+
+    &__grid
+      grid-template-columns: 55% 40%
+
+    &__advantages
+      grid-gap: 20px
+
+  +min(md)
+    +py(180px, 120px)
+
+    &__grid
+      grid-template-columns: 67% 33%
+
+    &__form
+      padding: 45px
+      &-title
+        font-size: 36px
+
+    &__title
+      +fs(60px)
+      margin-bottom: 20px
+      padding-right: 45px
+
+    &__subtitle
+      +fs(36px)
+      margin-bottom: 30px
+
+    &__advantages
+      grid-template-columns: repeat(3, 1fr)
