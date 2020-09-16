@@ -14,7 +14,7 @@
           {% include "menu.twig" with {'menu': menu.get_items} %}
         </nav>
         <div class="nav__addition col-6 col-md-2" id="js-nav-addition">
-          <a href="" class="nav__addition">+38 093 343 21 27</a>
+          <a href="{{ options.phone }}" class="nav__addition-phone">{{ options.phone }}</a>
         </div>
       </div>
     </div>

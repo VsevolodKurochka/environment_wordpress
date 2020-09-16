@@ -60,11 +60,23 @@ Timber::$autoescape = false;
 class StarterSite extends Timber\Site {
 	/** Add timber support. */
 	public function __construct() {
+        add_theme_support( 'post-formats' );
+        add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'menus' );
+        add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+        add_action( 'wp_footer', array( $this, 'register_scripts' ) );
+
+        show_admin_bar(false);
+
+        $this->add_options_page();
+        $this->generate_menu();
+
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -75,6 +87,14 @@ class StarterSite extends Timber\Site {
 	public function register_taxonomies() {
 
 	}
+
+    public function register_scripts() {
+        wp_enqueue_style( 'css-style', get_stylesheet_uri() );
+
+        wp_enqueue_style( 'css-main', get_template_directory_uri() . '/static/css/style.min.css' );
+        wp_enqueue_script( 'js-jquery', get_template_directory_uri() . '/static/js/jquery.min.js', array(), '20151215', true );
+        wp_enqueue_script( 'js-jquery-scripts', get_template_directory_uri() . '/static/js/jquery.main.js', array(), '20151215', true );
+    }
 
     function generate_menu() {
         register_nav_menus( array(
