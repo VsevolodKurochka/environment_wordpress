@@ -1,19 +1,39 @@
 .home-greeting
   position: relative
   overflow: hidden
+  +py(30px, 60px)
 
   &__cloud
     +a()
+    animation: cloudAnimation 15s linear infinite
+    &_1
+      +a(0, null, null, 20%)
+      +h(90px)
+      animation-delay: -3s
+    &_2
+      +h(40px)
+      +a(10%, null, null, 60%)
+      animation-duration: 10s
+    &_3
+      +a(30%, null, null, -10%)
+      +h(100px)
+    &_4
+      +a(48%, null, null, 30%)
+      +h(70px)
+      animation-delay: 3s
+      animation-duration: 5s
 
   &__title
     line-height: 1.1
     color: $color-brand-2
     margin-bottom: 15px
+    +fs(32px)
     +ff('demi')
 
   &__subtitle
     margin-bottom: 30px
     +ff('demi')
+    +fs(24px)
 
   &__grid
     display: grid
