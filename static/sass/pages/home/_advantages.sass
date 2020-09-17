@@ -1,0 +1,99 @@
+.home-advantages
+  position: relative
+  overflow: hidden
+  padding-top: 100px
+  margin-top: 0
+  +min(lg)
+    padding-top: 250px
+
+  &__inner
+    position: relative
+    padding: 30px
+    background-color: $color-brand-1
+    &:before
+      content: ''
+      +a(-155px, null, null, -1px)
+      +size(calc(100% + 1px), 156px)
+      +bgi('../img/top-advantages.png')
+
+  &__plane
+    @at-root
+      @keyframes advantagePlane
+        0%
+          transform: none
+        100%
+          transform: translate(250px, 250px) scale(0.8)
+
+    +a(-25%, null, null, 50%)
+    +w(100px)
+    animation: advantagePlane 100s linear 0s 1 normal forwards
+
+  &__title
+    color: #fff
+    font-size: 36px
+    margin-bottom: 30px
+    +ff('demi')
+
+  &__row
+    position: relative
+    z-index: 1
+
+  &__river
+    margin-bottom: 20px
+
+  &__item
+    &-header
+      position: relative
+      padding-left: 35px
+      margin-bottom: 20px
+    &-title
+      color: #ffd5b4
+      +ff('demi')
+      +fs(20px)
+    &-circle
+      +a(0, null, null, 0)
+      +size(30px)
+      background-color: #5eaf26
+      border-radius: 100%
+      &:before
+        content: ''
+        +a(50%, null, null, 50%)
+        transform: translate(-50%, -50%)
+        +size(20px)
+        border-radius: 100%
+        background-color: #f6c9a3
+
+    &-content
+      display: grid
+      grid-gap: 20px
+
+
+  &__row_1 &__item:nth-child(2) &__item-circle:before
+    background-color: $color-brand-3
+  &__row_1 &__item:nth-child(3) &__item-circle:before
+    background-color: $color-brand-2
+
+  &__row_2 &__item:nth-child(1) &__item-circle:before
+    background-color: $color-brand-1
+  &__row_2 &__item:nth-child(2) &__item-circle:before
+    background-color: #c8f9ff
+  &__row_2 &__item:nth-child(3) &__item-circle:before
+    background-color: #008962
+
+  +min(md)
+    &__plane
+      +w(180px)
+    &__inner
+      padding: 35px 70px 70px 70px
+    &__river
+      +mx(-70px)
+    &__row
+      display: grid
+      grid-template-columns: repeat(3, 250px)
+      justify-content: space-between
+    &__item
+      &-title
+        +fs(24px)
+    &__title
+      font-size: 60px
+      margin-bottom: 50px

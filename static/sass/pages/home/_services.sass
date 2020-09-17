@@ -3,17 +3,11 @@
   overflow: hidden
   +py(50px)
   +min(sm)
-    +py(100px)
+    +py(100px, 0)
   +min(lg)
-    +py(150px)
+    +py(150px, 0)
   &__cloud
     display: none
-    @at-root
-      @keyframes servicesCloud
-        0%, 100%
-          transform: none
-        50%
-          transform: translateY(30px)
     +a()
 
     &_1
@@ -67,7 +61,7 @@
       +mx(auto)
     &__cloud
       display: block
-      animation: servicesCloud 15s linear infinite
+      animation: cloudAnimation 15s linear infinite
       &_1
         +a(30px, null, null, 60%)
         +h(90px)
