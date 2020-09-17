@@ -1,0 +1,74 @@
+.home-complex
+  position: relative
+  overflow: hidden
+  padding-top: 100px
+  margin-top: 0
+  margin-bottom: 0
+  +min(sm)
+    padding-top: 250px
+
+  &__inner
+    position: relative
+    padding: 30px
+    background-color: $color-brand-1
+    &:before
+      content: ''
+      +a(-155px, null, null, -1px)
+      +size(calc(100% + 1px), 218px)
+      +bgi('../img/top-tree.png')
+
+  &__plane
+    @at-root
+      @keyframes complexPlane
+        0%
+          transform: none
+        100%
+          transform: translate(250px, 250px) scale(0.8)
+
+    +a(-35%, null, null, 35%)
+    +w(100px)
+    animation: complexPlane 100s linear 0s 1 normal forwards
+
+  &__title
+    color: #fff
+    font-size: 36px
+    margin-bottom: 30px
+    line-height: 1.1
+    +ff('demi')
+
+  &__subtitle
+    +fs(18px)
+
+  &__items
+    display: grid
+    grid-gap: 20px
+
+  &__grid
+    display: grid
+    grid-gap: 30px
+
+  &__item
+    display: inline-grid
+    grid-gap: 20px
+    grid-template-columns: 70px 1fr
+    align-items: center
+    font-size: 18px
+
+  +min(md)
+    &__inner
+      padding: 70px
+
+    &__grid
+      grid-template-columns: repeat(2, 1fr)
+      align-items: center
+
+    &__items
+      grid-template-columns: repeat(2, 1fr)
+      grid-gap: 60px
+
+    &__title
+      +fs(60px)
+      margin-bottom: 45px
+    &__subtitle
+      +fs(24px)
+      padding-right: 75px
