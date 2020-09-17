@@ -1,26 +1,34 @@
-.nav__menu-item
-  +d(block)
-  +tr()
+.nav
+  $nav: &
+  &__menu
+    ul
+      +min(md)
+        display: flex
+        justify-content: flex-end
+        align-items: center
+    li
+      display: block
+      margin-bottom: 10px
 
-  a
-    +d(block)
-    +r()
-    +c(inherit)
-    text-decoration: none
+      a
+        display: block
+        position: relative
+        text-decoration: none
+        padding: 10px 15px
+        color: $color-white
+        font-weight: bold
+        +tr()
 
-  +max(md)
-    +mb(10px)
+      &.current-menu-item a
+        color: $color-brand-3
 
-    a
-      padding: 10px 15px
-      +c($color-white)
+      +min(md)
+        margin-bottom: 0
 
-
+        a
+          color: #848484
+          &:hover
+            color: $color-brand-3
   +min(md)
-    +d(inline-block)
-    vertical-align: middle
-    +offset('r', 15px)
-
-    a
-      +py(7px)
-      +linkEffect3()
+    &_scrolled li a
+      color: $color-white

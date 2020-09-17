@@ -1,1 +1,22 @@
-+navAddition1()
+.nav__addition
+  &-phone
+    display: block
+    text-decoration: none
+    +ff('demi')
+    +tr()
+    color: #812e60
+    font-size: 20px
+    &:hover
+      color: lighten(#812e60, 10%)
+
+  &-place
+    display: inline-grid
+    grid-template-columns: 10px 1fr
+    grid-gap: 10px
+    align-items: center
+    font-weight: bold
+
+  +min(md)
+    display: flex
+    align-items: center
+    justify-content: space-between
