@@ -98,12 +98,12 @@ class StarterSite extends Timber\Site {
 
     function generate_menu() {
         register_nav_menus( array(
-            'menu-1' => esc_html__( 'Меню в шапке', 'visotskiy' ),
+            'menu-1' => esc_html__( 'Меню в шапке', 'environment' ),
         ) );
     }
 
     function add_options_page() {
-        acf_add_options_page();
+        //acf_add_options_page();
     }
 
     function cc_mime_types($mimes) {
@@ -117,9 +117,9 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-        $context['menu'] = new TimberMenu('menu-1');
+        $context['menu'] = new Timber\Menu('menu-1');
         $context['site'] = $this;
-        $context['options'] = get_fields('option');
+        //$context['options'] = get_fields('option');
 
 		return $context;
 	}

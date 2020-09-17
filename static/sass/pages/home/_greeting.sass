@@ -1,5 +1,6 @@
 .home-greeting
   position: relative
+  overflow: hidden
 
   &__cloud
     +a()
@@ -31,7 +32,7 @@
     position: relative
     padding-left: 45px
     svg
-      +a(0, null, null, 0)
+      +a(-10px, null, null, 0)
 
     &:nth-child(1) svg path
       fill: $color-brand-2
@@ -49,9 +50,30 @@
     border-radius: 5px
     &-title
       font-size: 25px
+      margin-bottom: 25px
+      +ff('demi')
 
   +min(sm)
     +py(120px)
+
+    &__cloud
+      display: block
+      animation: cloudAnimation 15s linear infinite
+      &_1
+        +a(30px, null, null, 20%)
+        +h(90px)
+        animation-delay: -1s
+      &_2
+        +h(350px)
+        +a(10%, null, null, 60%)
+      &_3
+        +a(30%, null, null, -13%)
+        +h(250px)
+      &_4
+        +a(60%, null, null, 30%)
+        +h(200px)
+        animation-delay: 3s
+        animation-duration: 5s
 
     &__grid
       grid-template-columns: 55% 40%
@@ -77,7 +99,7 @@
 
     &__subtitle
       +fs(36px)
-      margin-bottom: 30px
+      margin-bottom: 50px
 
     &__advantages
       grid-template-columns: repeat(3, 1fr)
