@@ -1,0 +1,29 @@
+<section class="section home-complex">
+  <div class="container">
+    <div class="home-complex__inner">
+      <img src="{{ theme.link }}/static/img/plane-2.svg" alt="Cloud" class="home-complex__plane">
+      <div class="home-complex__grid">
+        <div class="home-complex__content">
+          <div class="home-complex__title">
+            Комплексный<br>
+            анализ<br>
+            объектов
+          </div>
+          <div class="home-complex__subtitle">
+            Чтобы обезопасить вас в будущем,
+            мы оцениваем комплексную
+            техногенную нагрузку предприятий.
+          </div>
+        </div>
+        <div class="home-complex__items">
+          {% for i in range(1, 6) %}
+            <div class="home-complex__item">
+              <img src="{{ theme.link }}/static/img/noise.svg" alt="Cloud" class="home-complex__item-image">
+              <div class="home-complex__item-title">Уровень <br> шума</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
