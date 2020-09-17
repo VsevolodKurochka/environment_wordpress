@@ -1,0 +1,79 @@
+.home-about
+  position: relative
+  margin-bottom: 0
+  &__inner
+    position: relative
+    background-color: $color-brand-1
+    &:before
+      content: ''
+      +a(-91px, null, null, -1px)
+      +size(calc(100% + 1px), 91px)
+      +bgi('../img/top.png')
+
+  &__river
+    +a(-32px, null, null, 315px)
+
+  &__title
+    color: #ffd5b4
+    font-size: 36px
+    margin-bottom: 25px
+    +ff('demi')
+
+  &__row
+    position: relative
+    z-index: 1
+    margin-bottom: 60px
+
+  &__row-item-content
+    display: grid
+    grid-gap: 20px
+
+  &__objects
+    position: relative
+    z-index: 1
+
+  &__objects-item
+    &-title
+      color: #ffd5b4
+      font-size: 20px
+      margin-bottom: 10px
+      +ff('demi')
+
+  +min(md)
+    &__row
+      display: grid
+      grid-template-columns: 330px 370px
+      justify-content: space-between
+    &__inner
+      height: 996px
+      padding-left: 70px
+      padding-right: 70px
+      padding-top: 40px
+
+    &__objects-item
+      $item: &
+      position: absolute
+      display: flex
+      align-items: center
+      &_1
+        top: 110%
+        left: 10%
+        flex-direction: row-reverse
+        text-align: right
+        #{$item}-body
+          margin-right: 15px
+
+      &_2
+        top: 160%
+        left: 9%
+        flex-direction: row-reverse
+        text-align: right
+        align-items: flex-end
+        #{$item}-body
+          margin-right: 15px
+          max-width: 300px
+
+      &_3
+        top: -53%
+        left: 63%
+        align-items: baseline

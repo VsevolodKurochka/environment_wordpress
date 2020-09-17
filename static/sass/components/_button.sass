@@ -10,35 +10,26 @@ $btn-large-font-size: 18px
 $btn-border-width: 3px
 $btn-border-style: solid
 
-//-
-//- Buttons variant
-//-
-
-// 1 key - background
-// 2 key - text color
-$btn-static: ("white": ($color-white, $color-brand-1), "brand-1": ($color-brand-1, $color-white), "brand-2": ($color-brand-2, $color-white))
-
-// 1 key - border-color
-// 2 key - text color
-$btn-border: ("brand-1": ($color-brand-1, $color-brand-1))
 
 .btn
   +btn()
+  +ff('demi')
   +btn-size($btn-padding, $btn-font-size)
 
-  &-group &
-    margin: 5px
+  +min(sm)
+    +btn-size(25px, 16px)
 
-  &_lg
-    +btn-size($btn-large-padding, $btn-large-font-size)
-
-  &_shadow
-    &-brand-1
-      +bs("0 3px 8px 1px transparentize($color-brand-1, 0.5)")
-
+  &_rounded
+    background-color: transparent
+    border: 3px solid $color-brand-3
+    border-radius: 50px
+    color: $color-brand-3
+    &:before
+      background-color: $color-brand-3
     &:hover
-      +bs("none")
+      color: $color-white
 
-  +btn-static-iteration()
-
-  +btn-border-iteration()
+  &_block
+    +w(100%)
+    display: block
+    text-align: center
