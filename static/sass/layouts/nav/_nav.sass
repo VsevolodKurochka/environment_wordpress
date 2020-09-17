@@ -1,20 +1,13 @@
 .nav
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
   z-index: 10
   +tr()
-
-  & + .site
-    margin-top: 56px
 
   &__row
     display: grid
     +jc(space-between)
     +ai(center)
     width: 100%
-    grid-template-columns: 230px 1fr 300px
+    grid-template-columns: 160px auto
     height: 100%
 
     +min(md)
@@ -34,9 +27,6 @@
 
   +min(md)
     +py(5px)
-
-    & + .site
-      margin-top: 0
 
     &_scrolled
       +bgc($color-brand-2)

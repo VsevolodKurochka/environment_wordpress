@@ -4,19 +4,26 @@
     text-decoration: none
     +ff('demi')
     +tr()
-    color: #812e60
-    font-size: 20px
-    &:hover
-      color: lighten(#812e60, 10%)
+    font-size: 12px
+    color: #fff
 
   &-place
-    display: inline-grid
-    grid-template-columns: 10px 1fr
-    grid-gap: 10px
-    align-items: center
-    font-weight: bold
+    display: none
 
   +min(md)
     display: flex
     align-items: center
     justify-content: space-between
+
+    &-place
+      display: inline-grid
+      grid-template-columns: 10px 1fr
+      grid-gap: 10px
+      align-items: center
+      font-weight: bold
+
+    &-phone
+      font-size: 20px
+      color: #812e60
+      &:hover
+        color: lighten(#812e60, 10%)
