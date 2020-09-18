@@ -12,16 +12,18 @@
       animation-delay: -3s
     &_2
       +h(40px)
-      +a(10%, null, null, 60%)
+      +a(20%, null, null, 70%)
       animation-duration: 10s
     &_3
       +a(30%, null, null, -10%)
       +h(100px)
+      opacity: 0.5
     &_4
       +a(48%, null, null, 30%)
       +h(70px)
       animation-delay: 3s
       animation-duration: 5s
+      opacity: 0.3
 
   &__title
     line-height: 1.1
@@ -79,6 +81,7 @@
     &__cloud
       display: block
       animation: cloudAnimation 15s linear infinite
+      opacity: 1
       &_1
         +a(30px, null, null, 20%)
         +h(90px)

@@ -8,24 +8,33 @@
     +py(150px)
 
   &__cloud
-    display: none
-    +a()
-
+    display: block
+    animation: cloudAnimation 15s linear infinite
     &_1
-      display: block
-      +h(30px)
-
+      +a(30px, null, null, 80%)
+      +h(140px)
+      animation-delay: 1s
     &_2
-      display: block
-      +h(70px)
-
+      +h(120px)
+      +a(45%, null, null, 40%)
+      animation-delay: 2s
+      +min(sm)
+        +h(200px)
     &_3
-      display: block
-      +h(40px)
+      +a(70%, null, null, -10%)
+      +h(80px)
+      animation-delay: 3s
+      +min(sm)
+        +h(140px)
+    &_4
+      +a(85%, null, null, 60%)
+      +h(90px)
+      animation-delay: -5s
+      animation-duration: 10s
 
   &__title
     color: $color-brand-2
-    font-size: 36px
+    font-size: 19px
     margin-bottom: 30px
     +ff('demi')
 
@@ -64,6 +73,8 @@
       border-radius: 0
 
   +min(sm)
+    &__title
+      font-size: 36px
     &__grid
       grid-template-columns: repeat(2, 1fr)
       grid-gap: 30px
@@ -77,24 +88,3 @@
       +fs(48px)
       max-width: 75%
       margin-bottom: 60px
-
-    &__cloud
-      display: block
-      animation: cloudAnimation 15s linear infinite
-      &_1
-        +a(30px, null, null, 80%)
-        +h(140px)
-        animation-delay: 1s
-      &_2
-        +h(200px)
-        +a(45%, null, null, 40%)
-        animation-delay: 2s
-      &_3
-        +a(70%, null, null, -10%)
-        +h(140px)
-        animation-delay: 3s
-      &_4
-        +a(85%, null, null, 60%)
-        +h(90px)
-        animation-delay: -5s
-        animation-duration: 10s
