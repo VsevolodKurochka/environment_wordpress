@@ -11,13 +11,13 @@
             <div class="home-services__item-title">{{ item.title|raw }}</div>
           </div>
           <div class="home-services__item-content">{{ item.content|raw }}</div>
-          {% if item.link %}
+          {#{% if item.link %}#}
           <div class="home-services__item-footer">
             <a href="{{ item.link }}" class="btn btn_rounded btn_block effect effect_bounce-top">
               {{ function('__', '[:uk]Детальнiше[:][:ru]Подробнее[:]') }}
             </a>
           </div>
-          {% endif %}
+          {#{% endif %}#}
         </div>
       {% endfor %}
     </div>
