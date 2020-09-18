@@ -1,29 +1,37 @@
 .nav__addition
   &-phone
-    display: block
+    display: none
     text-decoration: none
     +ff('demi')
     +tr()
     font-size: 12px
     color: #fff
 
-  &-place
-    display: none
-
   +min(md)
     display: flex
     align-items: center
-    justify-content: space-between
-
-    &-place
-      display: inline-grid
-      grid-template-columns: 10px 1fr
-      grid-gap: 10px
-      align-items: center
-      font-weight: bold
+    justify-content: flex-end
 
     &-phone
-      font-size: 20px
+      display: block
+      font-size: 16px
       color: #812e60
+      margin-left: 15px
       &:hover
         color: lighten(#812e60, 10%)
+      .nav_scrolled &
+        color: #fff
+
+  &-translate
+    font-size: 0
+    ul, li
+      list-style: none
+    .language-chooser
+      display: flex
+      align-items: center
+      li:not(:last-child)
+        margin-right: 10px
+    img
+      +tr()
+      &:hover
+        opacity: 0.6

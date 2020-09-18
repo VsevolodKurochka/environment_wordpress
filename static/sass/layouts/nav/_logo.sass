@@ -6,11 +6,12 @@
     +ai(center)
     height: 100%
 
-  &-content
-    +d(inline-block)
-
   img
+    display: inline-block
+    height: 25px
     vertical-align: middle
-
-    +max(md)
-      max-height: 25px
+    +tr()
+    +min(md)
+      height: 55px
+      .nav_scrolled &
+        height: 30px
