@@ -9,58 +9,57 @@
 
   &__inner
     position: relative
-    padding: 30px
+    padding: 15px 15px 30px 15px
     background-color: $color-brand-1
     &:before
       content: ''
-      +a(-155px, null, null, -1px)
-      +size(calc(100% + 1px), 156px)
-      +bgi('../img/top-advantages.png')
+      +a(-84px, null, null, 0.1px)
+      +size(calc(100% + 0.1px), 86px)
+      +bgi('../img/top-advantages.png', 75% 0)
+      +min(sm)
+        +a(-155px, null, null, -1px)
+        +size(calc(100% + 1px), 156px)
+        background-position-x: 0
 
   &__plane
-    @at-root
-      @keyframes advantagePlane
-        0%
-          transform: none
-        100%
-          transform: translate(250px, 250px) scale(0.8)
-
-    +a(-25%, null, null, 50%)
+    +a(-70px, null, null, -90px)
     +w(100px)
-    animation: advantagePlane 100s linear 0s 1 normal forwards
+    animation: advantagePlaneMobile 150s linear 0s 1 normal forwards
 
   &__title
     color: #fff
-    font-size: 36px
+    font-size: 25px
     margin-bottom: 30px
     +ff('demi')
 
   &__row
     position: relative
+    display: grid
+    grid-gap: 20px
     z-index: 1
 
   &__river
-    margin-bottom: 20px
+    margin: 30px -15px 15px -15px
 
   &__item
     &-header
       position: relative
-      padding-left: 35px
-      margin-bottom: 20px
+      padding-left: 25px
+      margin-bottom: 10px
     &-title
       color: #ffd5b4
       +ff('demi')
       +fs(20px)
     &-circle
-      +a(0, null, null, 0)
-      +size(30px)
+      +a(5px, null, null, 0)
+      +size(20px)
       background-color: #5eaf26
       border-radius: 100%
       &:before
         content: ''
         +a(50%, null, null, 50%)
         transform: translate(-50%, -50%)
-        +size(20px)
+        +size(15px)
         border-radius: 100%
         background-color: #f6c9a3
 
@@ -81,7 +80,25 @@
   &__row_2 &__item:nth-child(3) &__item-circle:before
     background-color: #008962
 
+  +min(sm)
+    &__title
+      font-size: 36px
+    &__inner
+      padding: 30px
+
+    &__item
+      &-header
+        padding-left: 35px
+      &-circle
+        top: 0
+        +size(30px)
+        &:before
+          +size(20px)
+
   +min(md)
+    &__plane
+      +a(-25%, null, null, 50%)
+      animation: advantagePlane 100s linear 0s 1 normal forwards
     &__plane
       +w(180px)
     &__inner
@@ -89,10 +106,11 @@
     &__river
       +mx(-70px)
     &__row
-      display: grid
       grid-template-columns: repeat(3, 250px)
       justify-content: space-between
     &__item
+      &-header
+        margin-bottom: 20px
       &-title
         +fs(24px)
     &__title
