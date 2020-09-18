@@ -6,20 +6,16 @@
         <button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger">
           <span class="hamburger__lines"><span></span><span></span><span></span><span></span></span>
         </button>
-        <div class="nav__logo-content">
-        {# options.logo {{ options.phone }} #}
-          <a href="{{site.url}}"><img src="{{theme.link}}/static/img/logo.png" alt="{{site.name}}"></a>
-        </div>
+        <a href="{{site.url}}"><img src="{{ options.logo }}" alt="{{site.name}}"></a>
       </div>
       <nav class="nav__menu" id="js-navigation-menu">
         {% include "menu.twig" with {'menu': menu} %}
       </nav>
       <div class="nav__addition" id="js-nav-addition">
-        <div class="nav__addition-place">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="13px"><path fill-rule="evenodd"  fill="rgb(199, 41, 105)" d="M7.797,0.093 L13.812,0.093 C15.226,0.093 16.050,1.687 15.230,2.838 L12.491,6.683 L9.215,11.282 C8.521,12.256 7.072,12.256 6.378,11.282 L3.102,6.683 L0.364,2.838 C-0.456,1.687 0.368,0.093 1.782,0.093 L7.797,0.093 Z"/></svg>
-          <div class="nav__addition-place-title">Киев</div>
+        <div class="nav__addition-translate">
+          {{ translate_widget }}
         </div>
-        <a href="{{ options.phone }}" class="nav__addition-phone">+38 093 343 21 27</a>
+        <a href="{{ options.phones[1].phone }}" class="nav__addition-phone">{{ options.phones[1].phone }}</a>
       </div>
     </div>
   </div>

@@ -65,7 +65,8 @@ class StarterSite extends Timber\Site {
         add_theme_support( 'menus' );
         add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
-		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+        add_action( 'widgets_init', array($this, 'environment_widgets_init') );
+        add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
@@ -107,7 +108,15 @@ class StarterSite extends Timber\Site {
     }
 
     function add_options_page() {
-        //acf_add_options_page();
+        acf_add_options_page();
+    }
+
+    function environment_widgets_init() {
+        register_sidebar( array(
+            'id'          => 'top-menu',
+            'name'        => __( 'Top Menu', 'environment' ),
+            'description' => __( 'This sidebar is located above the age logo.', 'environment' ),
+        ) );
     }
 
     function cc_mime_types($mimes) {
@@ -141,7 +150,8 @@ class StarterSite extends Timber\Site {
 	public function add_to_context( $context ) {
         $context['menu'] = new Timber\Menu('menu-1');
         $context['site'] = $this;
-        //$context['options'] = get_fields('option');
+        $context['options'] = get_fields('option');
+        $context['translate_widget'] = Timber::get_widgets('top-menu');
 
 		return $context;
 	}
