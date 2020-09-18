@@ -93,6 +93,7 @@ class StarterSite extends Timber\Site {
 
         wp_enqueue_style( 'css-main', get_template_directory_uri() . '/static/css/style.min.css' );
         wp_enqueue_script( 'js-jquery', get_template_directory_uri() . '/static/js/jquery.min.js', array(), '20151215', true );
+        wp_enqueue_script( 'js-emergence', get_template_directory_uri() . '/static/js/emergence.min.js', array(), '20151215', true );
         wp_enqueue_script( 'js-jquery-scripts', get_template_directory_uri() . '/static/js/jquery.main.js', array(), '20151215', true );
     }
 

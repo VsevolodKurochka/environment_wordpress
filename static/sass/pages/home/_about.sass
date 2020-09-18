@@ -1,6 +1,36 @@
 .home-about
   position: relative
   margin-bottom: 0
+
+  &__tree
+    transform: scale3d(1,1,1) translateZ(0)
+    &_1
+      display: none
+      height: 90px
+      +a(-90px, null, null, 50px)
+    &_2
+      display: none
+      height: 130px
+      +a(-120px, null, null, 20%)
+      animation-delay: 0.8s
+    &_3
+      height: 130px
+      +a(-140px, null, null, 50%)
+      animation-delay: 1.2s
+    &_4
+      height: 130px
+      +a(-100px, null, null, 85%)
+      animation-delay: 2.2s
+
+  &[data-emergence="visible"] &__tree
+    animation: jello-horizontal 1.3s both cubic-bezier(.58,.3,.005,1)
+    &_2
+      animation-delay: 0.3s
+    &_3
+      animation-delay: 0.7s
+    &_4
+      animation-delay: 1.4s
+
   &__inner
     position: relative
     background-color: $color-brand-1
@@ -41,6 +71,8 @@
       +ff('demi')
 
   +min(md)
+    &__tree
+      display: block
     &__row
       display: grid
       grid-template-columns: 330px 370px
