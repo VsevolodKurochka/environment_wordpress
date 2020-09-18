@@ -1,1 +1,20 @@
-Copyright {{"now"|date('Y')}}
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__row">
+        <a href="{{site.url}}"><img src="{{ options.logo }}" alt="{{site.name}}" class="footer__logo"></a>
+        <nav class="footer__menu">
+          {% include "menu.twig" with {'menu': menu} %}
+        </nav>
+      </div>
+      <div class="footer__contacts">
+        <ul class="footer__phones">
+          {% for item in options.phones %}
+            <li><a href="tel: {{ item.phone }}">{{ item.phone }}</a></li>
+          {% endfor %}
+        </ul>
+        <address class="footer__address">{{ options.address }}</address>
+      </div>
+    </div>
+  </div>
+</footer>

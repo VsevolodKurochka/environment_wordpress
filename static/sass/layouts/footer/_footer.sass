@@ -1,2 +1,55 @@
+=footer-link()
+  color: #e8e8e8
+  text-decoration: none
+  +tr()
+  &:hover
+    color: $color-brand-1
+
+=footer-list()
+  list-style: none
+  display: grid
+  grid-gap: 10px
+  a
+    +footer-link()
+
 .footer
-  +fs(12px)
+  +py(15px, 30px)
+  +fs(16px)
+  color: #e8e8e8
+
+  &__logo
+    filter: opacity(0.5) grayscale(1)
+    +tr()
+    &:hover
+      filter: none
+
+  &__grid
+    display: grid
+    grid-gap: 20px
+
+  &__title
+    +ff('demi')
+
+  &__menu
+    ul
+      list-style: none
+    a
+      +footer-link()
+
+  &__phones
+    +footer-list()
+
+  &__address
+    font-style: normal
+    margin-top: 15px
+
+  +min(sm)
+    &__row
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+    &__menu
+      ul
+        display: flex
+        align-items: center
