@@ -9,25 +9,21 @@
 
   &__inner
     position: relative
-    padding: 30px
+    padding: 15px 15px 30px 15px
     background-color: $color-brand-1
     &:before
       content: ''
-      +a(-155px, null, null, -1px)
-      +size(calc(100% + 1px), 218px)
+      +a(-75px, null, null, -0.1px)
+      +size(calc(100% + 0.1px), 108px)
       +bgi('../img/top-tree.png')
+      +min(md)
+        +a(-155px, null, null, -1px)
+        +size(calc(100% + 1px), 218px)
 
   &__plane
-    @at-root
-      @keyframes complexPlane
-        0%
-          transform: none
-        100%
-          transform: translate(150px, 150px) scale(0.8)
-
-    +a(-40%, null, null, 35%)
-    +w(100px)
-    animation: complexPlane 150s linear 0s 1 normal forwards
+    +a(-90px, null, null, -75px)
+    +w(70px)
+    animation: advantagePlaneMobile 150s linear 0s 1 normal forwards
 
   &__title
     color: #fff
@@ -69,6 +65,11 @@
     &__title
       +fs(60px)
       margin-bottom: 45px
+
     &__subtitle
       +fs(24px)
       padding-right: 75px
+
+    &__plane
+      +a(-40%, null, null, 35%)
+      animation: complexPlane 150s linear 0s 1 normal forwards
