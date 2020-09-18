@@ -4,7 +4,7 @@
   padding-top: 100px
   margin-top: 0
   margin-bottom: 0
-  +min(lg)
+  +min(md)
     padding-top: 250px
 
   &__inner
@@ -16,10 +16,13 @@
       +a(-84px, null, null, 0.1px)
       +size(calc(100% + 0.1px), 86px)
       +bgi('../img/top-advantages.png', 75% 0)
-      +min(sm)
-        +a(-155px, null, null, -1px)
-        +size(calc(100% + 1px), 156px)
+      +min(md)
+        +a(-115px, null, null, -1px)
+        +size(calc(100% + 1px), 115px)
         background-position-x: 0
+      +min(lg)
+        top: -155px
+        height: 155px
 
   &__plane
     +a(-70px, null, null, -90px)
@@ -81,14 +84,22 @@
     background-color: #008962
 
   +min(sm)
+    &__row
+      grid-template-columns: repeat(3, 1fr)
+
     &__title
       font-size: 36px
+
     &__inner
       padding: 30px
+
+    &__river
+      +mx(-30px)
 
     &__item
       &-header
         padding-left: 35px
+        min-height: 60px
       &-circle
         top: 0
         +size(30px)

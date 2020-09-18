@@ -11,7 +11,8 @@
     &_2
       display: none
       height: 130px
-      +a(-120px, null, null, 20%)
+      +a(-120px, null, null, 22%)
+      z-index: 2
     &_3
       height: 70px
       +a(-80px, null, null, 15px)
@@ -44,7 +45,7 @@
 
   &__river
     display: none
-    +a(-32px, null, null, 315px)
+    +a()
 
   &__title
     color: #ffd5b4
@@ -107,13 +108,17 @@
     &__tree
       display: block
     &__row
-      grid-template-columns: 330px 370px
+      grid-template-columns: repeat(2, 300px)
       justify-content: space-between
     &__river
       display: block
+      height: calc(100% + 32px)
+      top: -33px
+      left: 221px
+      z-index: 1
     &__title
-      font-size: 36px
-      margin-bottom: 25px
+      font-size: 26px
+      margin-bottom: 15px
     &__tree
       &_3
         height: 130px
@@ -122,10 +127,10 @@
         height: 130px
         +a(-100px, null, null, 85%)
     &__inner
-      height: 996px
-      padding-left: 70px
-      padding-right: 70px
+      height: 936px
       padding-top: 40px
+      padding-right: 40px
+      padding-left: 20px
       &:before
         +a(-91px, null, null, -1px)
         +size(calc(100% + 1px), 91px)
@@ -154,14 +159,37 @@
 
       &_2
         top: 160%
-        left: 9%
+        left: 23px
         text-align: right
         align-items: flex-end
         #{$item}-body
           margin-right: 15px
-          max-width: 300px
+          max-width: 280px
 
       &_3
-        top: -53%
+        top: -20px
+        left: 61%
+        align-items: baseline
+
+  +min(lg)
+    &__row
+      grid-template-columns: 330px 370px
+    &__river
+      height: auto
+      top: -32px
+      left: 315px
+    &__inner
+      height: 996px
+      padding-left: 70px
+      padding-right: 70px
+      padding-top: 40px
+    &__title
+      font-size: 36px
+      margin-bottom: 25px
+    &__objects-item
+      &_2
+        left: 94px
+      &_3
+        top: 20px
         left: 63%
         align-items: baseline
