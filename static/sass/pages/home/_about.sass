@@ -12,32 +12,34 @@
       display: none
       height: 130px
       +a(-120px, null, null, 20%)
-      animation-delay: 0.8s
     &_3
-      height: 130px
-      +a(-140px, null, null, 50%)
-      animation-delay: 1.2s
+      height: 70px
+      +a(-80px, null, null, 15px)
     &_4
-      height: 130px
-      +a(-100px, null, null, 85%)
-      animation-delay: 2.2s
+      height: 90px
+      +a(-80px, null, null, 65%)
 
   &[data-emergence="visible"] &__tree
     animation: jello-horizontal 1.3s both cubic-bezier(.58,.3,.005,1)
     &_2
-      animation-delay: 0.3s
+      +min(md)
+        animation-delay: 0.3s
     &_3
-      animation-delay: 0.7s
+      +min(md)
+        animation-delay: 0.7s
     &_4
-      animation-delay: 1.4s
+      animation-delay: 0.3s
+      +min(md)
+        animation-delay: 1.4s
 
   &__inner
     position: relative
     background-color: $color-brand-1
+    padding: 15px
     &:before
       content: ''
-      +a(-91px, null, null, -1px)
-      +size(calc(100% + 1px), 91px)
+      +a(-91px, null, null, -0.1px)
+      +size(calc(100% + 0.1px), 91px)
       +bgi('../img/top.png')
 
   &__river
@@ -46,50 +48,96 @@
 
   &__title
     color: #ffd5b4
-    font-size: 36px
-    margin-bottom: 25px
+    font-size: 25px
+    margin-bottom: 15px
     +ff('demi')
 
   &__row
+    display: grid
+    grid-gap: 20px
     position: relative
     z-index: 1
-    margin-bottom: 60px
+    margin-bottom: 30px
 
   &__row-item-content
     display: grid
     grid-gap: 20px
 
   &__objects
+    display: grid
+    grid-gap: 20px
     position: relative
     z-index: 1
 
   &__objects-item
+    display: grid
+    align-items: center
+    grid-template-columns: 80px 1fr
+    grid-gap: 10px
     &-title
       color: #ffd5b4
-      font-size: 20px
+      font-size: 14px
       margin-bottom: 10px
       +ff('demi')
+    &_2
+      grid-template-columns: 1fr 80px
+
+    &_2 &-image
+      order: 2
+
+    &_1 &-image,
+    &_3 &-image
+      position: relative
+      left: -15px
+
+  +min(xs)
+    &__objects-item
+      grid-template-columns: 130px 1fr
+      &-title
+        +fs(18px)
+      &_2
+        grid-template-columns: 1fr 130px
+
+      &_2 &-image
+        order: 2
 
   +min(md)
     &__tree
       display: block
     &__row
-      display: grid
       grid-template-columns: 330px 370px
       justify-content: space-between
     &__river
       display: block
+    &__title
+      font-size: 36px
+      margin-bottom: 25px
+    &__tree
+      &_3
+        height: 130px
+        +a(-140px, null, null, 50%)
+      &_4
+        height: 130px
+        +a(-100px, null, null, 85%)
     &__inner
       height: 996px
       padding-left: 70px
       padding-right: 70px
       padding-top: 40px
+      &:before
+        +a(-91px, null, null, -1px)
+        +size(calc(100% + 1px), 91px)
+
+    &__objects
+      display: block
 
     &__objects-item
       $item: &
       position: absolute
       display: flex
       align-items: center
+      &-title
+        font-size: 36px
       &_1
         top: 110%
         left: 10%

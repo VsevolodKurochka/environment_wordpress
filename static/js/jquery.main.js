@@ -1,8 +1,6 @@
 $(document).ready(function(){
 
-	emergence.init({
-		offsetTop: 100
-	});
+	emergence.init();
 
 	function scroll(scrollLink, speed){
 		$('html, body').animate({
