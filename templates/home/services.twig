@@ -1,35 +1,23 @@
-{% set item = {
-  image: '/static/img/feature1.svg',
-  title: 'Оценка влияния<br>на окружающую среду',
-  content: '<p>Вы получите оформленное в соответствии
-с законодательством заключение по оценке
-воздействия на окружающую среду.</p>
-
-<p>Заключение позволяет проводить строительство
-и реконструкцию жилых,  производственных
-и сельскохозяйственных объектов.</p>
-',
-  link: '#'
-} %}
-{% set items = [
-  item, item, item, item, item
-] %}
 <section class="home-services">
   {% for i in range(1, 6) %}
     <img src="{{ theme.link }}/static/img/cloud.png" alt="Cloud" class="home-services__cloud home-services__cloud_{{ i }}">
   {% endfor %}
   <div class="container">
     <div class="home-services__grid">
-      {% for item in items %}
+      {% for item in post.get_field('services') %}
         <div class="home-services__item">
           <div class="home-services__item-header">
-            <img src="{{ theme.link }}/{{ item.image|raw }}" alt="{{ item.title|striptags }}" class="home-services__item-image">
+            <img src="{{ item.image }}" alt="{{ item.title|striptags }}" class="home-services__item-image">
             <div class="home-services__item-title">{{ item.title|raw }}</div>
           </div>
           <div class="home-services__item-content">{{ item.content|raw }}</div>
+          {% if item.link %}
           <div class="home-services__item-footer">
-            <a href="{{ item.link }}" class="btn btn_rounded btn_block effect effect_bounce-top">Подробнее</a>
+            <a href="{{ item.link }}" class="btn btn_rounded btn_block effect effect_bounce-top">
+              {{ function('__', '[:uk]Детальнiше[:][:ru]Подробнее[:]') }}
+            </a>
           </div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>

@@ -77,6 +77,7 @@ class StarterSite extends Timber\Site {
         $this->add_options_page();
         $this->generate_menu();
 
+        //add_filter( 'upload_mimes', array($this, 'cc_mime_types') );
         add_filter('tiny_mce_before_init', array( $this, 'my_mce4_options' ));
 
         parent::__construct();

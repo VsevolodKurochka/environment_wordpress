@@ -3,69 +3,37 @@
 
     <div class="home-advantages__inner">
       <div class="home-advantages__title">
-        Наши преимущества
+        {{ post.get_field('advantages_title') }}
       </div>
       <img src="{{ theme.link }}/static/img/plane.svg" alt="Plane" class="home-advantages__plane">
       <div class="home-advantages__row home-advantages__row_1">
-        <div class="home-advantages__item">
-          <div class="home-advantages__item-header">
-            <div class="home-advantages__item-circle"></div>
-            <div class="home-advantages__item-title">Комплекс услуг <br>в одном месте</div>
+        {% for item in post.get_field('advantages') %}
+          <div class="home-advantages__item">
+            <div class="home-advantages__item-header">
+              <div class="home-advantages__item-circle"></div>
+              <div class="home-advantages__item-title">{{ item.title }}</div>
+            </div>
+            <div class="home-advantages__item-content">
+              {{ item.content }}
+            </div>
           </div>
-          <div class="home-advantages__item-content">
-            У нас можно получить все услуги, связанные с экологией: получить разрешительные документы, заказать проверку, просчитать риски и т.д.
-          </div>
-        </div>
-        <div class="home-advantages__item">
-          <div class="home-advantages__item-header">
-            <div class="home-advantages__item-circle"></div>
-            <div class="home-advantages__item-title">Комплекс услуг <br>в одном месте</div>
-          </div>
-          <div class="home-advantages__item-content">
-            У нас можно получить все услуги, связанные с экологией: получить разрешительные документы, заказать проверку, просчитать риски и т.д.
-          </div>
-        </div>
-        <div class="home-advantages__item">
-          <div class="home-advantages__item-header">
-            <div class="home-advantages__item-circle"></div>
-            <div class="home-advantages__item-title">Комплекс услуг <br>в одном месте</div>
-          </div>
-          <div class="home-advantages__item-content">
-            У нас можно получить все услуги, связанные с экологией: получить разрешительные документы, заказать проверку, просчитать риски и т.д.
-          </div>
-        </div>
+        {% endfor %}
       </div>
       <div class="home-advantages__river">
         <img src="{{ theme.link }}/static/img/river-horizontal.png" alt="River" class="home-advantages__river-image">
       </div>
       <div class="home-advantages__row home-advantages__row_2">
-        <div class="home-advantages__item">
-          <div class="home-advantages__item-header">
-            <div class="home-advantages__item-circle"></div>
-            <div class="home-advantages__item-title">Комплекс услуг <br>в одном месте</div>
+        {% for item in post.get_field('advantages_2') %}
+          <div class="home-advantages__item">
+            <div class="home-advantages__item-header">
+              <div class="home-advantages__item-circle"></div>
+              <div class="home-advantages__item-title">{{ item.title }}</div>
+            </div>
+            <div class="home-advantages__item-content">
+              {{ item.content }}
+            </div>
           </div>
-          <div class="home-advantages__item-content">
-            У нас можно получить все услуги, связанные с экологией: получить разрешительные документы, заказать проверку, просчитать риски и т.д.
-          </div>
-        </div>
-        <div class="home-advantages__item">
-          <div class="home-advantages__item-header">
-            <div class="home-advantages__item-circle"></div>
-            <div class="home-advantages__item-title">Комплекс услуг <br>в одном месте</div>
-          </div>
-          <div class="home-advantages__item-content">
-            У нас можно получить все услуги, связанные с экологией: получить разрешительные документы, заказать проверку, просчитать риски и т.д.
-          </div>
-        </div>
-        <div class="home-advantages__item">
-          <div class="home-advantages__item-header">
-            <div class="home-advantages__item-circle"></div>
-            <div class="home-advantages__item-title">Комплекс услуг <br>в одном месте</div>
-          </div>
-          <div class="home-advantages__item-content">
-            У нас можно получить все услуги, связанные с экологией: получить разрешительные документы, заказать проверку, просчитать риски и т.д.
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
