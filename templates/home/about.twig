@@ -5,58 +5,31 @@
       <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="home-about__tree home-about__tree_2">
       <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="home-about__tree home-about__tree_3">
       <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="home-about__tree home-about__tree_4">
-
       <img src="{{ theme.link }}/static/img/river.png" alt="River" class="home-about__river">
+
       <div class="home-about__row">
-        <div class="home-about__row-item">
-          <p class="home-about__title">Кто мы?</p>
-          <div class="home-about__row-item-content">
-            <p>Компания ЭНВИПРОДЖЕКТ специализируется на оказании услуг
-              в сфере охраны окружающей среды
-              и проведении комплексной экологической оценки для  предприятий по ряду параметров, основываясь
-              на законодательстве Украины
-              и многолетнем опыте.</p>
-            <p>Разрешительные документы, которые поможет вам оформить наша компания, несут юридическую силу и полностью соответствуют национальному
-              и международному экологическому законодательству.</p>
-          </div>
-        </div>
-        <div class="home-about__row-item">
-          <p class="home-about__title">Как мы поможем вам?</p>
-          <div class="home-about__row-item-content">
-            <p>С ЭНВИПРОДЖЕКТ вы получите нужные экологические документы в установленный законодательством и согласованный с вами срок без лишней волокиты и минимизацией затратной части на их получение.</p>
-            <p>Более того: эксперты-экологи индивидуально подберут алгоритм  реализации ваших проектов и помогут вам заранее выявить проблемы с объектами и избежать
-              санкций за нарушение экологических норм.</p>
-          </div>
-        </div>
-      </div>
-      <div class="home-about__objects">
-        <p class="home-about__objects-title home-about__title">С какими объектами<br>
-          мы работаем? </p>
-        <div class="home-about__objects-item home-about__objects-item_1">
-          <img src="{{ theme.link }}/static/img/house.png" alt="River" class="home-about__objects-item-image">
-          <div class="home-about__objects-item-body">
-            <div class="home-about__objects-item-title">Жилые <br>объекты</div>
-            <div class="home-about__objects-item-content">(многоэтажные дома <br>и жилые комплексы)</div>
-          </div>
-        </div>
-        <div class="home-about__objects-item home-about__objects-item_2">
-          <img src="{{ theme.link }}/static/img/factory.png" alt="River" class="home-about__objects-item-image">
-          <div class="home-about__objects-item-body">
-            <div class="home-about__objects-item-title">Производственные <br>объекты</div>
-            <div class="home-about__objects-item-content">
-              (заводы, склады, цехи, полигоны, насосные станции, месторождения питьевых подземных вод, карьеры)
+        {% for item in post.get_fiel('about_questions') %}
+          <div class="home-about__row-item">
+            <p class="home-about__title">{{ item.title }}</p>
+            <div class="home-about__row-item-content">
+              {{ item.content }}
             </div>
           </div>
-        </div>
-        <div class="home-about__objects-item home-about__objects-item_3">
-          <img src="{{ theme.link }}/static/img/far.png" alt="River" class="home-about__objects-item-image">
-          <div class="home-about__objects-item-body">
-            <div class="home-about__objects-item-title">Сельскохозяйственные <br>объекты</div>
-            <div class="home-about__objects-item-content">(инфраструктурные проекты,
-              объекты водного, лесного
-              хозяйства)</div>
+        {% endfor %}
+      </div>
+      <div class="home-about__objects">
+        <div class="home-about__objects-title home-about__title">{{ post.get_field('about_title') }}</div>
+        {% set questionsIndex = 0 %}
+        {% for item in post.get_fiel('about_questions') %}
+          {% set questionsIndex = questionsIndex + 1 %}
+          <div class="home-about__objects-item home-about__objects-item_1">
+            <img src="{{ item.image }}" alt="{{ item.title|striptags }}" class="home-about__objects-item-image">
+            <div class="home-about__objects-item-body">
+              <div class="home-about__objects-item-title">{{ item.title }}</div>
+              <div class="home-about__objects-item-content">{{ item.content }}</div>
+            </div>
           </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

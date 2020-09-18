@@ -77,7 +77,9 @@ class StarterSite extends Timber\Site {
         $this->add_options_page();
         $this->generate_menu();
 
-		parent::__construct();
+        add_filter('tiny_mce_before_init', array( $this, 'my_mce4_options' ));
+
+        parent::__construct();
 	}
 	/** This is where you can register custom post types. */
 	public function register_post_types() {
@@ -111,6 +113,24 @@ class StarterSite extends Timber\Site {
         $mimes['svg'] = 'image/svg+xml';
         $mimes['pdf'] = 'application/pdf';
         return $mimes;
+    }
+
+    public function my_mce4_options($init) {
+
+        $custom_colours = '
+            "ffd5b4", "Желтый",
+            "00c800", "Зеленый",
+            "C72969", "Розовый"
+        ';
+
+        // build colour grid default+custom colors
+        $init['textcolor_map'] = '['.$custom_colours.']';
+
+        // change the number of rows in the grid if the number of colors changes
+        // 8 swatches per row
+        $init['textcolor_rows'] = 1;
+
+        return $init;
     }
 
 	/** This is where you add some context
