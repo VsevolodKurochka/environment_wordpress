@@ -8,7 +8,7 @@
       <img src="{{ theme.link }}/static/img/river.png" alt="River" class="home-about__river">
 
       <div class="home-about__row">
-        {% for item in post.get_fiel('about_questions') %}
+        {% for item in post.get_field('about_questions') %}
           <div class="home-about__row-item">
             <p class="home-about__title">{{ item.title }}</p>
             <div class="home-about__row-item-content">
@@ -20,9 +20,9 @@
       <div class="home-about__objects">
         <div class="home-about__objects-title home-about__title">{{ post.get_field('about_title') }}</div>
         {% set questionsIndex = 0 %}
-        {% for item in post.get_fiel('about_questions') %}
+        {% for item in post.get_field('about_object') %}
           {% set questionsIndex = questionsIndex + 1 %}
-          <div class="home-about__objects-item home-about__objects-item_1">
+          <div class="home-about__objects-item home-about__objects-item_{{ questionsIndex }}">
             <img src="{{ item.image }}" alt="{{ item.title|striptags }}" class="home-about__objects-item-image">
             <div class="home-about__objects-item-body">
               <div class="home-about__objects-item-title">{{ item.title }}</div>

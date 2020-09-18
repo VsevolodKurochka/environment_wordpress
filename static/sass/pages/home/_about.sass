@@ -74,6 +74,8 @@
     align-items: center
     grid-template-columns: 80px 1fr
     grid-gap: 10px
+    &-body
+      max-width: 250px
     &-title
       color: #ffd5b4
       font-size: 14px
@@ -136,11 +138,15 @@
       position: absolute
       display: flex
       align-items: center
+      grid-gap: 0
       &-title
         font-size: 20px
+      &_1 &-image,
+      &_3 &-image
+        left: 0
       &_1
         top: 110%
-        left: 10%
+        left: 15px
         flex-direction: row-reverse
         text-align: right
         #{$item}-body
