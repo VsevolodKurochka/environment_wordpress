@@ -5,11 +5,11 @@
   <div class="container">
     <div class="home-greeting__grid home-greeting__grid_center">
       <div class="home-greeting__content">
-        <h1 class="home-greeting__title">Остались вопросы?</h1>
+        <div class="home-greeting__title">
+          {{ post.get_field('questions_title') }}
+        </div>
         <h2 class="home-greeting__subtitle home-greeting__subtitle_size">
-          Расскажите эксперту
-          о вашей ситуации — и узнайте,
-          как мы можем вам помочь
+          {{ post.get_field('questions_subtitle') }}
         </h2>
       </div>
       <div class="home-greeting__form">
