@@ -39,14 +39,16 @@
   &__phones
     +footer-list()
 
+  &__email
+    +footer-link()
+
   &__address
     font-style: normal
-    margin-top: 15px
 
   +min(sm)
-    &__row
-      display: flex
-      align-items: center
+    &__grid
+      grid-template-columns: repeat(4, 1fr)
+      align-items: flex-start
       justify-content: space-between
 
     &__menu
