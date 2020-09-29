@@ -26,15 +26,7 @@
       opacity: 0.3
 
   &__title
-    line-height: 1.1
     color: $color-brand-2
-    margin-bottom: 15px
-    +fs(32px)
-    +ff('demi')
-
-  &__subtitle
-    +ff('demi')
-    +fs(24px)
 
   &__grid
     display: grid
@@ -64,17 +56,6 @@
 
     &:nth-child(3) svg path
       fill: $color-brand-1
-
-  &__form
-    background-color: $color-brand-1
-    color: #fff
-    padding: 20px 15px
-    border-radius: 10px
-    &-title
-      font-size: 25px
-      margin-bottom: 25px
-      text-align: center
-      +ff('demi')
 
   +min(sm)
     +py(60px)
@@ -107,28 +88,17 @@
     &__advantages
       grid-gap: 20px
 
-    &__title
-      font-size: 55px
-
   +min(md)
     +py(180px, 120px)
 
     &__grid
       grid-template-columns: 67% 30%
 
-    &__form
-      padding: 30px
-      &-title
-        text-align: left
-        font-size: 32px
-
     &__title
-      +fs(60px)
       margin-bottom: 20px
       padding-right: 45px
 
     &__subtitle
-      +fs(36px)
       margin-bottom: 50px
       &_size
         max-width: 540px
