@@ -4,11 +4,11 @@
     <div class="contacts-greeting__grid">
       <div class="contacts-greeting__body">
         <div class="section-header">
-          <h1 class="section-header__title contacts-greeting__title">{{ post.get_field('title') }}</h1>
+          <h1 class="section-header__title section-header__title_large contacts-greeting__title">{{ post.get_field('title') }}</h1>
           <h2 class="section-header__subtitle">{{ post.get_field('subtitle') }}</h2>
         </div>
         <div class="contacts-greeting__info">
-          <div class="contacts-greeting__info-data">
+          <div class="contacts-greeting__contacts">
             <address class="contacts-greeting__address">{{ options.address }}</address>
             <ul class="contacts-greeting__phones">
               {% for item in options.phones %}
