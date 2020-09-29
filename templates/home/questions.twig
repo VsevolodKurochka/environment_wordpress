@@ -5,17 +5,17 @@
   <div class="container">
     <div class="home-greeting__grid home-greeting__grid_center">
       <div class="home-greeting__content">
-        <div class="home-greeting__title">
+        <div class="section-header__title home-greeting__title">
           {{ post.get_field('questions_title') }}
         </div>
-        <h2 class="home-greeting__subtitle home-greeting__subtitle_size">
+        <h2 class="section-header__subtitle home-greeting__subtitle home-greeting__subtitle_size">
           {{ post.get_field('questions_subtitle') }}
         </h2>
       </div>
-      <div class="home-greeting__form">
-        <div class="home-greeting__form-title">{{ post.get_field('form_title') }}</div>
-        {{ function('do_shortcode', post.get_field('form_shortcode')) }}
-      </div>
+      {% include 'partial/landing-form.twig' with {
+        title: post.get_field('form_title'),
+        form: post.get_field('form_shortcode')
+      } %}
     </div>
   </div>
 </section>

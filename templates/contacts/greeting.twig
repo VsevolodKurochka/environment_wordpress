@@ -1,0 +1,16 @@
+<section class="contacts-greeting">
+  <div class="container">
+    <div class="contacts-greeting__grid">
+      <div class="contacts-greeting__info">
+        <div class="section-header">
+          <h1 class="section-header__title"></h1>
+          <h1 class="section-header__subtitle"></h1>
+        </div>
+      </div>
+      {% include 'partial/landing-form.twig' with {
+        title: post.get_field('form_title'),
+        form: post.get_field('form_shortcode')
+      } %}
+    </div>
+  </div>
+</section>

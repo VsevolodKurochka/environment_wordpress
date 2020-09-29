@@ -5,8 +5,10 @@
   <div class="container">
     <div class="home-greeting__grid">
       <div class="home-greeting__content">
-        <h1 class="home-greeting__title">{{ post.get_field('greeting_title') }}</h1>
-        <h2 class="home-greeting__subtitle">{{ post.get_field('greeting_subtitle') }}</h2>
+        <div class="section-header">
+          <h1 class="section-header__title home-greeting__title">{{ post.get_field('greeting_title') }}</h1>
+          <h2 class="section-header__subtitle home-greeting__subtitle">{{ post.get_field('greeting_subtitle') }}</h2>
+        </div>
         <ul class="home-greeting__advantages">
           {% for item in post.get_field('greeting_advantages') %}
             <li class="home-greeting__advantage">
@@ -16,10 +18,10 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="home-greeting__form">
-        <div class="home-greeting__form-title">{{ post.get_field('form_title') }}</div>
-        {{ function('do_shortcode', post.get_field('form_shortcode')) }}
-      </div>
+      {% include 'partial/landing-form.twig' with {
+        title: post.get_field('form_title'),
+        form: post.get_field('form_shortcode')
+      } %}
     </div>
   </div>
 </section>
