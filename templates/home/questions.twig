@@ -13,8 +13,8 @@
         </h2>
       </div>
       {% include 'partial/landing-form.twig' with {
-        title: post.get_field('form_title'),
-        form: post.get_field('form_shortcode')
+        title: options.form_title,
+        form: options.form_shortcode
       } %}
     </div>
   </div>
