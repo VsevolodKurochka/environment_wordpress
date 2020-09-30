@@ -1,0 +1,17 @@
+{% embed "partial/green-trees.twig" with {
+  button_link: '#contact',
+  custom_class: 'green-trees_offset'
+} %}
+  {% block main %}
+    <div class="service-rating-expertise__grid">
+      <div class="service-rating-expertise__column">
+        <div class="section-header__title service-rating-expertise__title">{{ post.get_field('expertise_title') }}</div>
+        <div class="service-rating-expertise__content">{{ post.get_field('expertise_title_kopiyuvaty') }}</div>
+      </div>
+      <div class="service-rating-expertise__column">
+        <div class="service-rating-expertise__content">{{ post.get_field('expertise_title_3') }}</div>
+        <div class="service-rating-expertise__subtitle">{{ post.get_field('expertise_title_4') }}</div>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
