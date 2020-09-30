@@ -1,0 +1,18 @@
+{% embed "partial/green-trees.twig" with {
+  title: post.get_field('greeting_title'),
+  subtitle: post.get_field('greeting_subtitle'),
+  button_link: '#contact',
+  custom_class: 'green-trees_offset'
+} %}
+  {% block main %}
+    <div class="service-rating-greeting__grid">
+      {% for item in post.get_field('greeting_advantages') %}
+        {% include 'partial/icon.twig' with {
+          icon_class: 'icon_vertical',
+          image: item.image,
+          title: item.content
+        } %}
+      {% endfor %}
+    </div>
+  {% endblock %}
+{% endembed %}
