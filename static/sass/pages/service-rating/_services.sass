@@ -1,0 +1,52 @@
+.service-rating
+  position: relative
+  overflow: hidden
+  padding-bottom: 45px
+  &__cloud
+    +a()
+    animation: cloudAnimation 15s linear infinite
+
+    &_1
+      +h(70px)
+      +a(30px, null, null, 60%)
+      opacity: 0.4
+
+    &_2
+      +h(70px)
+      +a(25%, null, null, 20%)
+
+    &_3
+      +h(100px)
+      +a(45%, null, null, -25%)
+      opacity: 0.2
+
+  &__grid
+    display: grid
+    grid-gap: 20px
+
+  &__title
+    color: $color-brand-2
+
+  +min(sm)
+    &__grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-gap: 60px
+
+  +min(md)
+    &__subtitle
+      max-width: 60%
+    &__cloud
+      display: block
+      opacity: 1
+      &_1
+        +a(30px, null, null, 60%)
+        +h(90px)
+        animation-delay: 1s
+      &_2
+        +h(120px)
+        +a(80%, null, null, 80%)
+        animation-delay: 2s
+      &_3
+        +a(50%, null, null, -3%)
+        +h(140px)
+        animation-delay: 3s

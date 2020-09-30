@@ -1,0 +1,18 @@
+<section class="section service-rating">
+  {% include 'partial/clouds.twig' with {limit: 3, commonClass: 'service-rating__cloud'} %}
+  <div class="container">
+    <div class="section-header">
+      <h3 class="section-header__title service-rating__title">{{ post.get_field('about_title') }}</h3>
+      <div class="section-header__subtitle service-rating__subtitle">{{ post.get_field('about_subtitle') }}</div>
+    </div>
+    <div class="service-rating__grid">
+      {% for item in post.get_field('about_services') %}
+        {% include 'partial/service-item.twig' with {
+          title: item.title,
+          image: item.image,
+          content: item.content
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
