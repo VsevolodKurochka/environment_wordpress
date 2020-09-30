@@ -6,7 +6,7 @@
   {% block main %}
     {% set items = post.get_field('order_steps') %}
     <div class="service-rating-order__area">
-      <div class="service-rating-order__grid">
+      <div class="service-rating-order__grid" data-area-grid="1">
         {% set index = 0 %}
         {% for item in items|slice(0, 3) %}
           {% set index = index + 1 %}
@@ -19,13 +19,12 @@
           </div>
         {% endfor %}
       </div>
-      <div class="service-rating-order__slider" data-slider="1"><div class="service-rating-order__slider-control"></div></div>
-      <div class="service-rating-order__grid">
+      <div class="service-rating-order__slider" data-slider-id="1"><div class="service-rating-order__slider-control" data-slider-control></div></div>
+      <div class="service-rating-order__grid" data-area-grid="2">
         {% set index = 3 %}
         {% for item in items|slice(3, 6) %}
           {% set index = index + 1 %}
-          {% set activeClass = index == 4 ? 'active' : '' %}
-          <div class="service-rating-order__item {{ activeClass }}" data-order-index="{{ index }}">
+          <div class="service-rating-order__item" data-order-index="{{ index }}">
             <div class="service-rating-order__item-title">{{ item.title }}</div>
             <div class="service-rating-order__item-content">
               {{ item.content }}
@@ -33,7 +32,7 @@
           </div>
         {% endfor %}
       </div>
-      <div class="service-rating-order__slider" data-slider="2"><div class="service-rating-order__slider-control"></div></div>
+      <div class="service-rating-order__slider" data-slider-id="2"><div class="service-rating-order__slider-control" data-slider-control></div></div>
     </div>
   {% endblock %}
 {% endembed %}

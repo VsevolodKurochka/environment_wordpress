@@ -85,4 +85,52 @@ $(document).ready(function(){
 			$('[data-step-index="1"]').addClass('active');
 		}
 	);
+
+	var orderSlider = {
+		1: {width: '25%'},
+		2: {width: '60%'},
+		3: {width: '105%'},
+
+		4: {width: '25%'},
+		5: {width: '60%'},
+		6: {width: '105%'}
+	};
+
+	var slider1 = $('[data-slider-id="1"]')
+	var slider2 = $('[data-slider-id="2"]');
+
+	slider1.find('[data-slider-control]').css('width', orderSlider[1].width);
+
+	$('[data-order-index]').hover(
+		function () {
+			var index = Number($(this).attr('data-order-index'));
+			var sliderCurrent = index > 3 ? slider2 : slider1;
+
+			$(this).addClass('active');
+			$(this).prevAll().addClass('active');
+			sliderCurrent.find('[data-slider-control]').css('width', orderSlider[index].width);
+
+			// if second row
+			if (index > 3) {
+				slider1.find('[data-slider-control]').css('width', orderSlider[3].width)
+				$('[data-area-grid="1"]').find('[data-order-index]').addClass('active');
+			}
+		},
+		function () {
+			var index = Number($(this).attr('data-order-index'));
+			var sliderCurrent = index > 3 ? slider2 : slider1;
+
+			$(this).removeClass('active');
+			$(this).prevAll().removeClass('active');
+			$('[data-order-index="1"]').addClass('active');
+
+			if (index > 3) {
+				$('[data-area-grid="1"]').find('[data-order-index]').removeClass('active');
+				slider2.find('[data-slider-control]').css('width', '0');
+				$('[data-order-index="1"]').addClass('active');
+			}
+
+			slider1.find('[data-slider-control]').css('width', orderSlider[1].width);
+		}
+	);
 });	
