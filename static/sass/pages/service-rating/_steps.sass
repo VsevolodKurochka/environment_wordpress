@@ -1,22 +1,38 @@
 .service-rating-steps
   &__title
     color: $color-brand-2
+
   &__item
     position: relative
+    padding-left: 50px
+    padding-bottom: 45px
     +tr()
-    &-header
-      text-align: right
+    &:before
+      content: ''
+      +a(5px, null, null, 7.5px)
+      +size(15px, 100%)
+      background-color: #c8f9ff
+
+    &:last-child
+      padding-bottom: 0
+      &:before
+        display: none
+
     &-title
       +ff('demi')
       font-size: 30px
       margin-bottom: 10px
+      color: $color-brand-2
+
     &-content
       display: grid
       grid-gap: 15px
+
     &-indicator
+      +a(0, null, null, -10px)
       &-circle
         position: relative
-        +size(70px)
+        +size(50px)
         +mx(auto)
         display: block
         border-radius: 100%
@@ -32,7 +48,7 @@
           +tr()
         &:before
           transform: translate(-50%, -50%)
-          +size(30px)
+          +size(20px)
           background-color: #69c729
         &:after
           transform: scale(0)
@@ -45,19 +61,31 @@
   +min(sm)
     &__item
       display: grid
-      grid-template-columns: 220px 170px 600px
+      grid-template-columns: 140px 170px 1fr
       justify-content: center
       color: #d1dee6
       padding-bottom: 90px
       grid-gap: 20px
+
       &:before
-        content: ''
-        +a(5px, null, null, 32%)
-        +size(30px, 100%)
-        background-color: #c8f9ff
+        top: 5px
+        left: 37.5%
+        width: 30px
+
+      &-header
+        text-align: right
+
+      &-indicator
+        position: relative
+        &-circle
+          +size(70px)
+          +mx(auto)
+          &:before
+            +size(30px)
 
       &.active
         color: $color-general
+
       &.active &
         &-title
           color: $color-brand-2
@@ -68,7 +96,15 @@
           &:after
             opacity: 0.3
             transform: scale(1)
-    &__item:last-child
-      padding-bottom: 0
+
+  +min(md)
+    &__item
+      grid-template-columns: 190px 170px 1fr
       &:before
-        display: none
+        left: 34%
+
+  +min(lg)
+    &__item
+      grid-template-columns: 190px 170px 600px
+      &:before
+        left: 32%
