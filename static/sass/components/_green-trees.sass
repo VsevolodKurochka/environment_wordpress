@@ -59,14 +59,33 @@
     color: $color-white
 
   &__footer
+    display: flex
+    flex-direction: column
+    position: relative
+    margin-top: 45px
     &-tree
-      width: 15px
+      position: relative
+    &-tree_1
+      height: 45px
+      align-self: end
+    &-tree_2
+      height: 60px
+      align-self: flex-end
 
   +min(md)
     &__tree
       display: block
     &__inner
       padding: 35px 70px 70px 70px
+    &__footer
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+      margin-top: 60px
+      &-tree_1
+        height: 90px
+      &-tree_2
+        height: 120px
     &__tree
       &_3
         height: 130px
