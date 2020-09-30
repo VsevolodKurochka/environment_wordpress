@@ -1,0 +1,30 @@
+.service-rating-order
+  &__grid
+    display: grid
+    grid-gap: 20px
+
+  &__item
+    display: grid
+    grid-template-columns: 40px 140px
+    color: #fff
+    grid-gap: 40px
+    &-title
+      +ff('demi')
+      +fs(70px)
+      line-height: 1
+    &.active &-title
+      color: $color-brand-3
+
+  &__slider
+    +my(25px, 40px)
+    +size(100%, 35px)
+    background-color: #00a900
+    border-radius: 30px
+
+  +min(sm)
+    &__grid
+      grid-template-columns: repeat(3, 1fr)
+      grid-gap: 30px
+    &__item
+      &-title
+        margin-top: 20px

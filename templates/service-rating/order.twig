@@ -1,0 +1,39 @@
+{% embed "partial/green-trees.twig" with {
+  button_link: '#contact',
+  custom_class: 'green-trees_offset',
+  title: post.get_field('order_title')
+} %}
+  {% block main %}
+    {% set items = post.get_field('order_steps') %}
+    <div class="service-rating-order__area">
+      <div class="service-rating-order__grid">
+        {% set index = 0 %}
+        {% for item in items|slice(0, 3) %}
+          {% set index = index + 1 %}
+          {% set activeClass = index == 1 ? 'active' : '' %}
+          <div class="service-rating-order__item {{ activeClass }}" data-order-index="{{ index }}">
+            <div class="service-rating-order__item-title">{{ item.title }}</div>
+            <div class="service-rating-order__item-content">
+              {{ item.content }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="service-rating-order__slider" data-slider="1"><div class="service-rating-order__slider-control"></div></div>
+      <div class="service-rating-order__grid">
+        {% set index = 3 %}
+        {% for item in items|slice(3, 6) %}
+          {% set index = index + 1 %}
+          {% set activeClass = index == 4 ? 'active' : '' %}
+          <div class="service-rating-order__item {{ activeClass }}" data-order-index="{{ index }}">
+            <div class="service-rating-order__item-title">{{ item.title }}</div>
+            <div class="service-rating-order__item-content">
+              {{ item.content }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="service-rating-order__slider" data-slider="2"><div class="service-rating-order__slider-control"></div></div>
+    </div>
+  {% endblock %}
+{% endembed %}
