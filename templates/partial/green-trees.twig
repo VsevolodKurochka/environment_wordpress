@@ -1,0 +1,32 @@
+<section class="section green-trees {{ custom_class }}" data-emergence="hidden">
+  <div class="container">
+    <div class="green-trees__inner">
+      <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__tree green-trees__tree_1">
+      <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__tree green-trees__tree_2">
+      <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="green-trees__tree green-trees__tree_3">
+      <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="green-trees__tree green-trees__tree_4">
+      <div class="section-header">
+        {% if title %}
+        <div class="section-header__title green-trees__title">
+          {{ title | raw }}
+        </div>
+        {% endif %}
+        {% if subtitle %}
+        <div class="section-header__subtitle green-trees__subtitle">
+          {{ subtitle | raw }}
+        </div>
+        {% endif %}
+      </div>
+      <div class="green-trees__content">
+        {% block main %}Default Main Content{% endblock %}
+      </div>
+      <div class="green-trees__footer">
+        <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__footer-tree green-trees__footer-tree_1">
+        <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__footer-tree green-trees__footer-tree_2">
+        <a href="{{ button_link }}" class="btn effect effect_bounce-top anchor">
+          {{ button_text | default(function('__', '[:uk]Отримати безкоштовну консультацію[:][:ru]Получить бесплатную консультацию[:]')) }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

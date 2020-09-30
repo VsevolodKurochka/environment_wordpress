@@ -1,0 +1,76 @@
+.green-trees
+  position: relative
+  margin-bottom: 0
+
+  &_offset
+    +py(60px)
+    +min(md)
+      +py(120px)
+
+  &__tree
+    transform: scale3d(1,1,1) translateZ(0)
+    &_1
+      display: none
+      height: 90px
+      +a(-90px, null, null, 50px)
+    &_2
+      display: none
+      height: 130px
+      +a(-120px, null, null, 22%)
+      z-index: 2
+    &_3
+      height: 70px
+      +a(-80px, null, null, 15px)
+    &_4
+      height: 90px
+      +a(-80px, null, null, 65%)
+
+  &[data-emergence="visible"] &__tree
+    animation: jello-horizontal 1.3s both cubic-bezier(.58,.3,.005,1)
+    &_2
+      +min(md)
+        animation-delay: 0.3s
+    &_3
+      +min(md)
+        animation-delay: 0.7s
+    &_4
+      animation-delay: 0.3s
+      +min(md)
+        animation-delay: 1.4s
+
+  &__inner
+    position: relative
+    padding: 15px 15px 30px 15px
+    background-color: $color-brand-1
+    &:before
+      content: ''
+      +a(-84px, null, null, 0.1px)
+      +size(calc(100% + 0.1px), 86px)
+      +bgi('../img/top-advantages.png', 75% 0)
+      +min(md)
+        +a(-115px, null, null, -1px)
+        +size(calc(100% + 1px), 115px)
+        background-position-x: 0
+      +min(lg)
+        top: -151px
+        height: 152px
+
+  &__title
+    color: $color-white
+
+  &__footer
+    &-tree
+      width: 15px
+
+  +min(md)
+    &__tree
+      display: block
+    &__inner
+      padding: 35px 70px 70px 70px
+    &__tree
+      &_3
+        height: 130px
+        +a(-140px, null, null, 50%)
+      &_4
+        height: 130px
+        +a(-100px, null, null, 85%)
