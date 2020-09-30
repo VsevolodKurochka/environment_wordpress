@@ -1,0 +1,16 @@
+<div class="service-item {{ custom_class }}">
+  <div class="service-item__header">
+    <img src="{{ image }}" alt="{{ title|striptags }}" class="service-item__image">
+    <div class="service-item__title">{{ title|raw }}</div>
+  </div>
+  {% if content %}
+    <div class="service-item__content">{{ content|raw }}</div>
+  {% endif %}
+  {% if link %}
+    <div class="service-item__footer">
+      <a href="{{ link }}" class="btn btn_rounded btn_block effect effect_bounce-top">
+        {{ link_text | default(function('__', '[:uk]Детальнiше[:][:ru]Подробнее[:]')) }}
+      </a>
+    </div>
+  {% endif %}
+</div>
