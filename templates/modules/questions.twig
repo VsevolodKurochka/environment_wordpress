@@ -1,0 +1,21 @@
+<section class="form-section" id="contacts">
+  {% include 'partial/clouds.twig' with {limit: 4, commonClass: 'form-section__cloud'} %}
+  <div class="container">
+    <div class="form-section__grid form-section__grid_center">
+      <div class="form-section__content">
+        <div class="section-header">
+          <div class="section-header__title form-section__title">
+            {{ function('__', '[:uk]Залишилися питання?[:][:ru]Остались вопросы?[:]') }}
+          </div>
+          <div class="section-header__subtitle form-section__subtitle form-section__subtitle_size">
+            {{ function('__', '[:uk]Розкажіть експерту про вашу ситуації - і дізнайтеся, як ми можемо вам допомогти[:][:ru]Расскажите эксперту о вашей ситуации — и узнайте, как мы можем вам помочь[:]') }}
+          </div>
+        </div>
+      </div>
+      {% include 'partial/landing-form.twig' with {
+        title: options.form_title,
+        form: options.form_shortcode
+      } %}
+    </div>
+  </div>
+</section>
