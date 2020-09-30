@@ -1,24 +1,15 @@
 <section class="home-services">
-  {% for i in range(1, 6) %}
-    <img src="{{ theme.link }}/static/img/cloud.png" alt="Cloud" class="home-services__cloud home-services__cloud_{{ i }}">
-  {% endfor %}
+  {% include 'partial/clouds.twig' with {limit: 6, commonClass: 'home-services__cloud'} %}
   <div class="container">
     <div class="home-services__grid">
       {% for item in post.get_field('services') %}
-        <div class="home-services__item">
-          <div class="home-services__item-header">
-            <img src="{{ item.image }}" alt="{{ item.title|striptags }}" class="home-services__item-image">
-            <div class="home-services__item-title">{{ item.title|raw }}</div>
-          </div>
-          <div class="home-services__item-content">{{ item.content|raw }}</div>
-          {#{% if item.link %}#}
-          <div class="home-services__item-footer">
-            <a href="{{ item.link }}" class="btn btn_rounded btn_block effect effect_bounce-top">
-              {{ function('__', '[:uk]Детальнiше[:][:ru]Подробнее[:]') }}
-            </a>
-          </div>
-          {#{% endif %}#}
-        </div>
+        {% include 'partial/service-item.twig' with {
+          custom_class: 'home-services__item',
+          title: item.title,
+          image: item.image,
+          content: item.content,
+          link: item.link
+        } %}
       {% endfor %}
     </div>
   </div>
