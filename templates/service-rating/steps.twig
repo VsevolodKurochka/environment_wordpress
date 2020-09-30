@@ -1,0 +1,26 @@
+<section class="section service-rating-steps">
+  <div class="container">
+    <div class="section-header">
+      <h3 class="section-header__title service-rating-steps__title">{{ post.get_field('steps_title') }}</h3>
+    </div>
+    <div class="service-rating-steps__grid">
+      {% set index = 0 %}
+      {% for item in post.get_field('steps') %}
+        {% set index = index + 1 %}
+        {% set activeClass = index == 1 ? 'active' : '' %}
+        <div class="service-rating-steps__item {{ activeClass }}" data-step-index="{{ index }}">
+          <div class="service-rating-steps__item-header">
+            <div class="service-rating-steps__item-title">{{ item.title }}</div>
+            <div class="service-rating-steps__item-subtitle">{{ item.subtitle }}</div>
+          </div>
+          <div class="service-rating-steps__item-indicator">
+            <div class="service-rating-steps__item-indicator-circle"></div>
+          </div>
+          <div class="service-rating-steps__item-content">
+            {{ item.content }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

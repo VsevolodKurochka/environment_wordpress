@@ -74,4 +74,15 @@ $(document).ready(function(){
 			$('body').removeClass('modal-open');
 		}
 	});
+
+	$('[data-step-index]').hover(
+		function () {
+			$(this).addClass('active');
+			$(this).prevAll().addClass('active');
+		},
+		function () {
+			$('[data-step-index]').removeClass('active');
+			$('[data-step-index="1"]').addClass('active');
+		}
+	);
 });	

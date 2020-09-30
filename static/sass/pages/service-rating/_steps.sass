@@ -1,0 +1,74 @@
+.service-rating-steps
+  &__title
+    color: $color-brand-2
+  &__item
+    position: relative
+    +tr()
+    &-header
+      text-align: right
+    &-title
+      +ff('demi')
+      font-size: 30px
+      margin-bottom: 10px
+    &-content
+      display: grid
+      grid-gap: 15px
+    &-indicator
+      &-circle
+        position: relative
+        +size(70px)
+        +mx(auto)
+        display: block
+        border-radius: 100%
+        background-color: #c8f9ff
+        +tr()
+        &:before,
+        &:after
+          content: ''
+          position: absolute
+          left: 50%
+          top: 50%
+          border-radius: 100%
+          +tr()
+        &:before
+          transform: translate(-50%, -50%)
+          +size(30px)
+          background-color: #69c729
+        &:after
+          transform: scale(0)
+          +size(140px)
+          margin-top: -70px
+          margin-left: -70px
+          background-color: #c8f9ff
+          opacity: 0
+          z-index: -1
+  +min(sm)
+    &__item
+      display: grid
+      grid-template-columns: 220px 170px 600px
+      justify-content: center
+      color: #d1dee6
+      padding-bottom: 90px
+      grid-gap: 20px
+      &:before
+        content: ''
+        +a(5px, null, null, 32%)
+        +size(30px, 100%)
+        background-color: #c8f9ff
+
+      &.active
+        color: $color-general
+      &.active &
+        &-title
+          color: $color-brand-2
+        &-indicator-circle
+          background-color: #c72969
+          &:before
+            background-color: #9d1c50
+          &:after
+            opacity: 0.3
+            transform: scale(1)
+    &__item:last-child
+      padding-bottom: 0
+      &:before
+        display: none
