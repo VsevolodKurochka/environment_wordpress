@@ -1,12 +1,10 @@
 .nav
   $nav: &
+  .nav-drop
+    padding-left: 10px
   &__menu
-    ul
-      +min(md)
-        display: flex
-        justify-content: flex-end
-        align-items: center
     li
+      position: relative
       display: block
       margin-bottom: 10px
 
@@ -30,5 +28,28 @@
           &:hover
             color: $color-brand-3
   +min(md)
+    &__menu > ul
+      display: flex
+      justify-content: flex-end
+      align-items: center
+    .nav-drop
+      +a(100%, null, null, 0)
+      padding-left: 0
+      min-width: 250px
+      opacity: 0
+      visibility: hidden
+      +bgc($color-brand-2)
+      text-align: left
+      +tr()
+
+    .nav-drop li a
+      color: #fff
+    .nav-drop li.current-menu-item a
+      color: $color-brand-1
+
+    &__menu li:hover > .nav-drop
+      opacity: 1
+      visibility: visible
+
     &_scrolled li a
       color: $color-white
