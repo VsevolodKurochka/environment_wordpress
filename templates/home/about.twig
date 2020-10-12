@@ -5,7 +5,13 @@
       <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="home-about__tree home-about__tree_2">
       <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="home-about__tree home-about__tree_3">
       <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="home-about__tree home-about__tree_4">
-      <img src="{{ theme.link }}/static/img/river.png" alt="River" class="home-about__river">
+      <div class="home-about__river">
+        <img src="{{ theme.link }}/static/img/river.png" alt="River" class="home-about__river-image">
+        <div class="fish home-about__river-fish">
+          <div class="fish__circle"></div>
+          <img src="{{ theme.link }}/static/img/fish.svg" alt="River" class="fish__image">
+        </div>
+      </div>
 
       <div class="home-about__row">
         {% for item in post.get_field('about_questions') %}
@@ -17,7 +23,7 @@
           </div>
         {% endfor %}
       </div>
-      <div class="home-about__objects">
+      <div class="home-about__objects" data-emergence="visible">
         <div class="home-about__objects-title home-about__title">{{ post.get_field('about_title') }}</div>
         {% set questionsIndex = 0 %}
         {% for item in post.get_field('about_object') %}

@@ -21,6 +21,10 @@
       </div>
       <div class="home-advantages__river">
         <img src="{{ theme.link }}/static/img/river-horizontal.png" alt="River" class="home-advantages__river-image">
+        <div class="fish home-advantages__river-fish">
+          <div class="fish__circle"></div>
+          <img src="{{ theme.link }}/static/img/fish.svg" alt="Fish" class="fish__image">
+        </div>
       </div>
       <div class="home-advantages__row home-advantages__row_2">
         {% for item in post.get_field('advantages_2') %}

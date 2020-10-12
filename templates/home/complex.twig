@@ -1,6 +1,9 @@
-<section class="section home-complex">
-  <div class="container">
-    <div class="home-complex__inner">
+{% embed "partial/green-trees.twig" with {
+  button_link: '#contact',
+  custom_class: 'green-trees_offset'
+} %}
+  {% block main %}
+    <div class="home-complex__inner" data-emergence="hidden">
       <img src="{{ theme.link }}/static/img/plane-2.svg" alt="Cloud" class="home-complex__plane">
       <div class="home-complex__grid">
         <div class="home-complex__content">
@@ -21,5 +24,5 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+  {% endblock %}
+{% endembed %}

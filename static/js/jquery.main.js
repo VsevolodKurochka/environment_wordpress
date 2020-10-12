@@ -8,10 +8,10 @@ $(document).ready(function(){
 		}, speed);
 		return false;
 	}
-	$('.anchor-next').click(function(e){
+	$('.anchor').click(function(e){
 		e.preventDefault();
-		var el = $(this).closest('section').next();
-		scroll(el, 1500);
+		var el = $(this).attr('href');
+		scroll($(el), 1500);
 	});
 	
 	// Develope

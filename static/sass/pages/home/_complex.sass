@@ -7,19 +7,6 @@
   +min(sm)
     padding-top: 250px
 
-  &__inner
-    position: relative
-    padding: 15px 15px 30px 15px
-    background-color: $color-brand-1
-    &:before
-      content: ''
-      +a(-75px, null, null, -0.1px)
-      +size(calc(100% + 0.1px), 108px)
-      +bgi('../img/top-tree.png')
-      +min(md)
-        +a(-155px, null, null, -1px)
-        +size(calc(100% + 1px), 218px)
-
   &__plane
     +a(-90px, null, null, -75px)
     +w(70px)
@@ -50,17 +37,20 @@
     align-items: center
     font-size: 18px
 
+  &__inner[data-emergence="visible"] &__footer
+
   +min(sm)
     &__title
       font-size: 36px
 
+    &__items
+      grid-template-columns: repeat(2, 1fr)
+      grid-gap: 30px
+
   +min(md)
-    &__inner
-      padding: 70px
 
     &__grid
-      grid-template-columns: repeat(2, 1fr)
-      align-items: center
+      grid-gap: 60px
 
     &__items
       grid-template-columns: repeat(2, 1fr)
@@ -68,12 +58,20 @@
 
     &__title
       +fs(60px)
-      margin-bottom: 45px
+      margin-bottom: 10px
 
     &__subtitle
       +fs(24px)
       padding-right: 75px
 
     &__plane
-      +a(-40%, null, null, 35%)
-      animation: complexPlane 150s linear 0s 1 normal forwards
+      +a(-30%, null, null, 0)
+      animation: complexPlane 200s linear 0s infinite normal forwards
+
+  +min(lg)
+    &__title
+      margin-bottom: 45px
+    &__grid
+      grid-template-columns: repeat(2, 1fr)
+      align-items: center
+      grid-gap: 30px

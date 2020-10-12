@@ -1,0 +1,19 @@
+.fish
+  &__image
+    transform: translateY(0) rotate(15deg)
+    animation: aboutFish 3s linear infinite
+  &__circle
+    +a(45px, null, null, 10px)
+    +size(55px, 20px)
+    border: 2px solid #008bb8
+    border-radius: 100%
+    animation: aboutFishCircle 3s linear infinite
+    &:before
+      content: ''
+      +a(2px, null, null, 10px)
+      +size(30px, 10px)
+      border: 2px solid #008bb8
+      border-radius: 100%
+
+  &__image
+    width: 45px

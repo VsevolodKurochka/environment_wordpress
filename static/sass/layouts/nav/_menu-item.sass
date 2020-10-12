@@ -13,7 +13,7 @@
         position: relative
         text-decoration: none
         padding: 10px 15px
-        color: $color-white
+        color: #000
         font-weight: bold
         +tr()
 
@@ -38,18 +38,13 @@
       min-width: 250px
       opacity: 0
       visibility: hidden
-      +bgc($color-brand-2)
+      background-color: #cafbff
       text-align: left
       +tr()
 
-    .nav-drop li a
-      color: #fff
     .nav-drop li.current-menu-item a
       color: $color-brand-1
 
     &__menu li:hover > .nav-drop
       opacity: 1
       visibility: visible
-
-    &_scrolled li a
-      color: $color-white

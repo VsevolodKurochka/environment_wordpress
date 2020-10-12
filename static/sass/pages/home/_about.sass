@@ -66,6 +66,7 @@
 
   &__objects
     display: grid
+    justify-content: center
     grid-gap: 20px
     position: relative
     z-index: 1
@@ -95,7 +96,7 @@
 
   +min(xs)
     &__objects-item
-      grid-template-columns: 130px 1fr
+      grid-template-columns: 130px minmax(150px, 250px)
       &-title
         +fs(18px)
       &_2
@@ -116,6 +117,8 @@
       top: -33px
       left: 221px
       z-index: 1
+      &-fish
+        +a(75%, null, null, 55%)
     &__title
       font-size: 26px
       margin-bottom: 15px
@@ -170,6 +173,13 @@
         top: -20px
         left: 61%
         align-items: baseline
+
+  &__objects[data-emergence="visible"] &__objects-item-image
+    animation: jello-horizontal 1.3s both cubic-bezier(.58,.3,.005,1)
+  &__objects[data-emergence="visible"] &__objects-item_2 &__objects-item-image
+    animation-delay: 1s
+  &__objects[data-emergence="visible"] &__objects-item_3 &__objects-item-image
+    animation-delay: 2s
 
   +min(lg)
     &__row

@@ -12,10 +12,10 @@
         {% include "menu.twig" with {'menu': menu} %}
       </nav>
       <div class="nav__addition" id="js-nav-addition">
+        <a href="tel: {{ options.phones[1].phone }}" class="nav__addition-phone">{{ options.phones[1].phone }}</a>
         <div class="nav__addition-translate">
           {{ translate_widget }}
         </div>
-        <a href="tel: {{ options.phones[1].phone }}" class="nav__addition-phone">{{ options.phones[1].phone }}</a>
       </div>
     </div>
   </div>

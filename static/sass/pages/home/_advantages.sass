@@ -27,7 +27,7 @@
   &__plane
     +a(-70px, null, null, -90px)
     +w(100px)
-    animation: advantagePlaneMobile 150s linear 0s 1 normal forwards
+    animation: advantagePlaneMobile 150s linear 0s infinite normal forwards
 
   &__title
     color: #fff
@@ -43,6 +43,8 @@
 
   &__river
     margin: 30px -15px 15px -15px
+    &-fish
+      +a(55%, null, null, 85%)
 
   &__item
     &-header
@@ -58,6 +60,7 @@
       +size(20px)
       background-color: #5eaf26
       border-radius: 100%
+      +tr()
       &:before
         content: ''
         +a(50%, null, null, 50%)
@@ -65,6 +68,7 @@
         +size(15px)
         border-radius: 100%
         background-color: #f6c9a3
+        +tr()
 
     &-content
       display: grid
@@ -82,6 +86,9 @@
     background-color: #c8f9ff
   &__row_2 &__item:nth-child(3) &__item-circle:before
     background-color: #008962
+
+  &__row &__item:hover &__item-circle:before
+    background-color: $color-brand-3
 
   +min(sm)
     &__row
@@ -108,8 +115,8 @@
 
   +min(md)
     &__plane
-      +a(-25%, null, null, 50%)
-      animation: advantagePlane 100s linear 0s 1 normal forwards
+      +a(-20%, null, null, 0)
+      animation: advantagePlane 300s linear 0s infinite normal forwards
     &__plane
       +w(180px)
     &__inner
