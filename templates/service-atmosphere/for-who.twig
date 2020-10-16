@@ -1,0 +1,20 @@
+{% set secondRowClasess = ['brand-1', 'light-blue', 'brand-3', 'green-dark'] %}
+
+{% embed "partial/green-mountains.twig" with {
+  custom_class: '',
+  enable_plane: 'true',
+  title: post.get_field('for-who-title'),
+  subtitle: post.get_field('for-who-subtitle')
+} %}
+  {% block main %}
+      <div class="green-mountains__grid">
+        {% for item in post.get_field('for-who-questions') %}
+          {% include 'partial/circle-item.twig' with {
+            custom_class: "home-advantages__item circle-item_#{secondRowClasess[loop.index0]}",
+            title: item.title,
+            content: item.content}
+          %}
+        {% endfor %}
+      </div>
+  {% endblock %}
+{% endembed %}
