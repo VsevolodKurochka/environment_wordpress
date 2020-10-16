@@ -1,0 +1,29 @@
+<section class="section service-atmosphere-action">
+  <div class="container">
+    <div class="service-atmosphere-action__grid">
+      <div class="service-atmosphere-action__content">
+        <h1 class="section-header__title service-atmosphere-action__title">{{ post.get_field('action-title') }}</h1>
+        <h2 class="section-header__subtitle">{{ post.get_field('action-subtitle') }}</h2>
+      </div>
+      <ul class="service-atmosphere-action__list">
+        {% for item in post.get_field('action-categories') %}
+          {% include 'partial/step-item.twig' with {
+            number: item.number,
+            title: item.title,
+            content: item.subtitle,
+          } %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="service-atmosphere-action__footer">
+      <div class="service-atmosphere-action__footer-title">
+        {{ post.meta('action-footer').title }}
+      </div>
+      <div class="service-atmosphere-action__footer-button">
+        <a href="#contact" class="btn btn_block btn_brand-3 effect effect_bounce-top anchor">
+          {{ post.meta('action-footer').button }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
