@@ -1,33 +1,4 @@
 .home-advantages
-  position: relative
-  overflow: hidden
-  padding-top: 100px
-  margin-top: 0
-  margin-bottom: 0
-  +min(md)
-    padding-top: 250px
-
-  &__inner
-    position: relative
-    padding: 15px 15px 30px 15px
-    background-color: $color-brand-1
-    &:before
-      content: ''
-      +a(-84px, null, null, 0.1px)
-      +size(calc(100% + 0.1px), 86px)
-      +bgi('../img/top-advantages.png', 75% 0)
-      +min(md)
-        +a(-115px, null, null, -1px)
-        +size(calc(100% + 1px), 115px)
-        background-position-x: 0
-      +min(lg)
-        top: -154px
-        height: 155px
-
-  &__plane
-    +a(-70px, null, null, -90px)
-    +w(100px)
-    animation: advantagePlaneMobile 150s linear 0s infinite normal forwards
 
   &__title
     color: #fff
@@ -46,50 +17,6 @@
     &-fish
       +a(55%, null, null, 85%)
 
-  &__item
-    &-header
-      position: relative
-      padding-left: 25px
-      margin-bottom: 10px
-    &-title
-      color: #ffd5b4
-      +ff('demi')
-      +fs(20px)
-    &-circle
-      +a(5px, null, null, 0)
-      +size(20px)
-      background-color: #5eaf26
-      border-radius: 100%
-      +tr()
-      &:before
-        content: ''
-        +a(50%, null, null, 50%)
-        transform: translate(-50%, -50%)
-        +size(15px)
-        border-radius: 100%
-        background-color: #f6c9a3
-        +tr()
-
-    &-content
-      display: grid
-      grid-gap: 20px
-
-
-  &__row_1 &__item:nth-child(2) &__item-circle:before
-    background-color: $color-brand-3
-  &__row_1 &__item:nth-child(3) &__item-circle:before
-    background-color: $color-brand-2
-
-  &__row_2 &__item:nth-child(1) &__item-circle:before
-    background-color: $color-brand-1
-  &__row_2 &__item:nth-child(2) &__item-circle:before
-    background-color: #c8f9ff
-  &__row_2 &__item:nth-child(3) &__item-circle:before
-    background-color: #008962
-
-  &__row &__item:hover &__item-circle:before
-    background-color: $color-brand-3
-
   +min(sm)
     &__row
       grid-template-columns: repeat(3, 1fr)
@@ -97,40 +24,15 @@
     &__title
       font-size: 36px
 
-    &__inner
-      padding: 30px
-
     &__river
       +mx(-30px)
 
-    &__item
-      &-header
-        padding-left: 35px
-        min-height: 60px
-      &-circle
-        top: 0
-        +size(30px)
-        &:before
-          +size(20px)
-
   +min(md)
-    &__plane
-      +a(-20%, null, null, 0)
-      animation: advantagePlane 300s linear 0s infinite normal forwards
-    &__plane
-      +w(180px)
-    &__inner
-      padding: 35px 70px 70px 70px
     &__river
       +mx(-70px)
     &__row
       grid-template-columns: repeat(3, 250px)
       justify-content: space-between
-    &__item
-      &-header
-        margin-bottom: 20px
-      &-title
-        +fs(24px)
     &__title
       font-size: 60px
       margin-bottom: 50px

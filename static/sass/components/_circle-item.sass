@@ -1,0 +1,57 @@
+.circle-item
+  &__header
+    position: relative
+    padding-left: 25px
+    margin-bottom: 10px
+  &__title
+    color: #ffd5b4
+    +ff('demi')
+    +fs(20px)
+  &__circle
+    +a(5px, null, null, 0)
+    +size(20px)
+    background-color: #5eaf26
+    border-radius: 100%
+    +tr()
+    &:before
+      content: ''
+      +a(50%, null, null, 50%)
+      transform: translate(-50%, -50%)
+      +size(15px)
+      border-radius: 100%
+      background-color: #f6c9a3
+      +tr()
+
+  &_brand-1 &__circle:before
+    background-color: $color-brand-1
+  &_brand-2 &__circle:before
+    background-color: $color-brand-2
+  &_brand-3 &__circle:before
+    background-color: $color-brand-3
+  &_light-blue &__circle:before
+    background-color: #c8f9ff
+  &_green-dark &__circle:before
+    background-color: #008962
+
+  &:hover &__circle:before
+    background-color: $color-brand-3
+
+  &__content
+    display: grid
+    grid-gap: 20px
+
+  +min(sm)
+    &__header
+      padding-left: 35px
+    &_static-header &__header
+      min-height: 60px
+    &__circle
+      top: 0
+      +size(30px)
+      &:before
+        +size(20px)
+  +min(md)
+    &__header
+      margin-bottom: 20px
+    &__title
+      +fs(24px)

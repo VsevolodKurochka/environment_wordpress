@@ -1,0 +1,25 @@
+<section class="section green-mountains {{ custom_class }}" data-emergence="hidden">
+  <div class="container">
+    <div class="green-mountains__inner">
+      {% if enable_plane == 'true' %}
+        <img src="{{ theme.link }}/static/img/plane.svg" alt="Plane" class="green-mountains__plane">
+      {% endif %}
+      {% if title or subtitle %}
+        <div class="green-mountains__header">
+          {% if title %}
+            <div class="green-mountains__title">{{ title }}</div>
+          {% endif %}
+
+          {% if subtitle %}
+            <div class="green-mountains__subtitle">{{ subtitle }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="green-mountains__content">
+        {% block main %}
+          Default Main Content
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,44 +1,38 @@
-<section class="section home-advantages">
-  <div class="container">
+{% set firstRowClasess = ['', 'brand-3', 'brand-2'] %}
+{% set secondRowClasess = ['brand-1', 'light-blue', 'green-dark'] %}
 
-    <div class="home-advantages__inner">
-      <div class="home-advantages__title">
-        {{ post.get_field('advantages_title') }}
-      </div>
-      <img src="{{ theme.link }}/static/img/plane.svg" alt="Plane" class="home-advantages__plane">
-      <div class="home-advantages__row home-advantages__row_1">
-        {% for item in post.get_field('advantages') %}
-          <div class="home-advantages__item">
-            <div class="home-advantages__item-header">
-              <div class="home-advantages__item-circle"></div>
-              <div class="home-advantages__item-title">{{ item.title }}</div>
-            </div>
-            <div class="home-advantages__item-content">
-              {{ item.content }}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-      <div class="home-advantages__river">
-        <img src="{{ theme.link }}/static/img/river-horizontal.png" alt="River" class="home-advantages__river-image">
-        <div class="fish home-advantages__river-fish">
-          <div class="fish__circle"></div>
-          <img src="{{ theme.link }}/static/img/fish.svg" alt="Fish" class="fish__image">
-        </div>
-      </div>
-      <div class="home-advantages__row home-advantages__row_2">
-        {% for item in post.get_field('advantages_2') %}
-          <div class="home-advantages__item">
-            <div class="home-advantages__item-header">
-              <div class="home-advantages__item-circle"></div>
-              <div class="home-advantages__item-title">{{ item.title }}</div>
-            </div>
-            <div class="home-advantages__item-content">
-              {{ item.content }}
-            </div>
-          </div>
-        {% endfor %}
+{% embed "partial/green-mountains.twig" with {
+  custom_class: 'home-advantages',
+  enable_plane: 'true'
+} %}
+  {% block main %}
+    <div class="home-advantages__title">
+      {{ post.get_field('advantages_title') }}
+    </div>
+    <div class="home-advantages__row home-advantages__row_1">
+      {% for item in post.get_field('advantages') %}
+        {% include 'partial/circle-item.twig' with {
+          custom_class: "home-advantages__item circle-item_static-header circle-item_#{firstRowClasess[loop.index0]}",
+          title: item.title,
+          content: item.content
+        } %}
+      {% endfor %}
+    </div>
+    <div class="home-advantages__river">
+      <img src="{{ theme.link }}/static/img/river-horizontal.png" alt="River" class="home-advantages__river-image">
+      <div class="fish home-advantages__river-fish">
+        <div class="fish__circle"></div>
+        <img src="{{ theme.link }}/static/img/fish.svg" alt="Fish" class="fish__image">
       </div>
     </div>
-  </div>
-</section>
+    <div class="home-advantages__row home-advantages__row_2">
+      {% for item in post.get_field('advantages_2') %}
+        {% include 'partial/circle-item.twig' with {
+          custom_class: "home-advantages__item circle-item_static-header circle-item_#{secondRowClasess[loop.index0]}",
+          title: item.title,
+          content: item.content
+        } %}
+      {% endfor %}
+    </div>
+  {% endblock %}
+{% endembed %}

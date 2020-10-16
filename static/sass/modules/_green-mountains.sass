@@ -1,0 +1,67 @@
+.green-mountains
+  position: relative
+  overflow: hidden
+  padding-top: 100px
+  margin-top: 0
+  margin-bottom: 0
+  +min(md)
+    padding-top: 180px
+
+  &__inner
+    position: relative
+    padding: 15px 15px 30px 15px
+    background-color: $color-brand-1
+    &:before
+      content: ''
+      +a(-84px, null, null, 0.1px)
+      +size(calc(100% + 0.1px), 86px)
+      +bgi('../img/top-advantages.png', 75% 0)
+      +min(md)
+        +a(-115px, null, null, -1px)
+        +size(calc(100% + 1px), 115px)
+        background-position-x: 0
+      +min(lg)
+        top: -154px
+        height: 155px
+
+  &__plane
+    +a(-70px, null, null, -90px)
+    +w(100px)
+    animation: advantagePlaneMobile 150s linear 0s infinite normal forwards
+
+  &__header
+    margin-bottom: 30px
+
+  &__title
+    color: #fff
+    font-size: 25px
+    margin-bottom: 15px
+    +ff('demi')
+
+  &__grid
+    position: relative
+    display: grid
+    grid-gap: 20px
+    z-index: 1
+
+  +min(sm)
+    &__grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-gap: 45px
+
+    &__title
+      font-size: 36px
+      margin-bottom: 30px
+
+    &__inner
+      padding: 30px
+
+  +min(md)
+    &__header
+      margin-bottom: 45px
+    &__plane
+      +w(180px)
+      +a(-150px, null, null, 0)
+      animation: advantagePlane 300s linear 0s infinite normal forwards
+    &__inner
+      padding: 35px 70px 70px 70px
