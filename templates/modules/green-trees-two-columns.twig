@@ -1,0 +1,23 @@
+{% embed "partial/green-trees.twig" with {
+  button_link: '#contact',
+  custom_class: 'green-trees_offset',
+  footer_title: footer_title
+} %}
+  {% block main %}
+    <div class="green-trees-two-columns__grid">
+      <div class="green-trees-two-columns__column">
+        {% if content_title %}
+        <div class="section-header__title green-trees-two-columns__title">{{ content_title }}</div>
+        {% endif %}
+        {% if content %}
+        <div class="green-trees-two-columns__content">{{ content }}</div>
+        {% endif %}
+      </div>
+      <div class="green-trees-two-columns__column">
+        {% if content_second %}
+          <div class="green-trees-two-columns__content">{{ content_second }}</div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
