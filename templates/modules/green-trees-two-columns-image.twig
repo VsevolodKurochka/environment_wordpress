@@ -1,0 +1,23 @@
+{% embed "partial/green-trees.twig" with {
+  button_link: '#contact',
+  custom_class: 'green-trees_offset'
+} %}
+  {% block main %}
+    <div class="green-trees-two-columns-image__grid">
+      <div class="green-trees-two-columns-image__column">
+        {% if content_title %}
+        <div class="section-header__title green-trees-two-columns-image__title">{{ content_title }}</div>
+        {% endif %}
+        {% if content %}
+        <div class="green-trees-two-columns-image__content">{{ content }}</div>
+        {% endif %}
+      </div>
+      <div class="green-trees-two-columns-image__column">
+        <img
+            class="green-trees-two-columns-image__picture"
+            src="{{ image }}"
+            alt="{{ content_title|striptags or content|striptags }}">
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
