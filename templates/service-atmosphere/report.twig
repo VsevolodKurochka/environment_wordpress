@@ -1,0 +1,7 @@
+{% include 'modules/green-trees-two-columns.twig' with {
+  footer_title: post.meta('report-footer').title,
+  content_title: post.get_field('report-title'),
+  content: post.get_field('report-subtitle-1'),
+  content_second: post.get_field('report-subtitle-2'),
+  button_text: post.meta('report-footer').button
+} %}
