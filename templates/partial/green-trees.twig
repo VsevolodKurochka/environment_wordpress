@@ -1,31 +1,42 @@
 <section class="section green-trees {{ custom_class }}" data-emergence="hidden">
   <div class="container">
     <div class="green-trees__inner">
-      <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__tree green-trees__tree_1">
-      <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__tree green-trees__tree_2">
-      <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="green-trees__tree green-trees__tree_3">
-      <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="green-trees__tree green-trees__tree_4">
-      <div class="section-header">
-        {% if title %}
-        <div class="section-header__title green-trees__title">
-          {{ title | raw }}
+      <div class="green-trees__background">
+        <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__tree green-trees__tree_1">
+        <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__tree green-trees__tree_2">
+        <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="green-trees__tree green-trees__tree_3">
+        <img src="{{ theme.link }}/static/img/trees.png" alt="Trees" class="green-trees__tree green-trees__tree_4">
+        {% if title or subtitle %}
+        <div class="section-header">
+          {% if title %}
+          <div class="section-header__title green-trees__title">
+            {{ title | raw }}
+          </div>
+          {% endif %}
+          {% if subtitle %}
+          <div class="section-header__subtitle green-trees__subtitle">
+            {{ subtitle | raw }}
+          </div>
+          {% endif %}
         </div>
         {% endif %}
-        {% if subtitle %}
-        <div class="section-header__subtitle green-trees__subtitle">
-          {{ subtitle | raw }}
+        <div class="green-trees__content">
+          {% block main %}Default Main Content{% endblock %}
         </div>
+      </div>
+      <div class="green-trees__footer {{ footer_title ? 'green-trees__footer_background' : '' }}">
+        {% if footer_title %}
+          <div class="green-trees__footer-title">{{ footer_title }}</div>
         {% endif %}
-      </div>
-      <div class="green-trees__content">
-        {% block main %}Default Main Content{% endblock %}
-      </div>
-      <div class="green-trees__footer">
-        <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__footer-tree green-trees__footer-tree_1">
-        <a href="{{ button_link }}" class="btn btn_brand-3 effect effect_bounce-top anchor">
+        {% if not footer_title %}
+          <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__footer-tree green-trees__footer-tree_1">
+        {% endif %}
+        <a href="{{ button_link }}" class="btn btn_brand-3 effect effect_bounce-top anchor green-trees__footer-button">
           {{ button_text | default(function('__', '[:uk]Отримати безкоштовну консультацію[:][:ru]Получить бесплатную консультацию[:]')) }}
         </a>
-        <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__footer-tree green-trees__footer-tree_2">
+        {% if not footer_title %}
+          <img src="{{ theme.link }}/static/img/single-tree.svg" alt="Tree" class="green-trees__footer-tree green-trees__footer-tree_2">
+        {% endif %}
       </div>
     </div>
   </div>
