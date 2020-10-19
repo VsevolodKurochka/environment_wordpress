@@ -1,0 +1,16 @@
+@mixin icons-list()
+  display: grid
+  grid-gap: 20px
+
+  +min(sm)
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 30px
+
+.icon-list-two-columns
+  +icons-list()
+
+.icon-list-three-columns
+  +icons-list()
+
+  +min(md)
+    grid-template-columns: repeat(3, 1fr)
