@@ -38,7 +38,7 @@
       +min(md)
         animation-delay: 1.4s
 
-  &__inner
+  &__background
     position: relative
     padding: 15px 15px 30px 15px
     background-color: $color-brand-1
@@ -62,7 +62,9 @@
     display: flex
     flex-direction: column
     position: relative
-    margin-top: 45px
+    background-color: $color-brand-1
+    padding: 15px
+    border-radius: 0 0 6px 6px
     &-tree
       position: relative
     &-tree_1
@@ -71,21 +73,36 @@
     &-tree_2
       height: 60px
       align-self: flex-end
+    &-title
+      color: #ffd5b4
+      +ff('demi')
+    &_background
+      background-color: #0a0
+      padding: 45px 30px
+    &_background &-tree
+      display: none !important
 
   +min(md)
     &__tree
       display: block
-    &__inner
-      padding: 35px 70px 70px 70px
+    &__background
+      padding: 35px 70px 45px 70px
     &__footer
       flex-direction: row
       align-items: center
       justify-content: space-between
-      margin-top: 60px
+      padding: 45px 70px
       &-tree_1
         height: 90px
       &-tree_2
         height: 120px
+    &__footer_background &__footer
+      &-title
+        font-size: 30px
+        max-width: 65%
+        margin-bottom: 0
+      &-button
+        width: 30%
     &__tree
       &_3
         height: 130px

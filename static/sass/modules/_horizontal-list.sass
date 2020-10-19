@@ -1,0 +1,33 @@
+.horizontal-list
+  display: grid
+  grid-gap: 30px
+
+  &__item
+    &-title
+      +ff('demi')
+      +c($color-brand-2)
+      font-size: 30px
+      margin-top: 0
+      margin-bottom: 15px
+    &-content
+      display: grid
+      grid-gap: 15px
+    &-image
+      max-width: 200px
+
+  +min(sm)
+    grid-gap: 50px
+    &__item
+      display: grid
+      grid-gap: 30px
+      grid-template-columns: repeat(2, 1fr)
+      align-items: center
+      &-image
+        max-width: 450px
+      &-title
+        font-size: 48px
+        margin-bottom: 30px
+      &-content
+        font-size: 22px
+      &:nth-child(odd) &-image
+        order: 2
