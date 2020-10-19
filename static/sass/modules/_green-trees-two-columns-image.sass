@@ -1,0 +1,27 @@
+.green-trees-two-columns-image
+  &__grid
+    display: grid
+    grid-gap: 20px
+
+  &__title
+    color: #ffd5b4
+    margin-bottom: 30px
+
+  &__content
+    display: grid
+    grid-gap: 15px
+
+  &__picture
+    max-width: 250px
+
+  +min(sm)
+    &__grid
+      grid-template-columns: 50% 35%
+      grid-gap: 30px
+      align-items: center
+      justify-content: space-between
+    &__content
+      font-size: 20px
+      grid-gap: 30px
+    &__picture
+      max-width: 100%
