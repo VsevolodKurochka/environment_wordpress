@@ -5,8 +5,13 @@
     padding: 30px 15px
     border-radius: 6px
 
-  &-title
+  &__title
     margin-bottom: 15px
+
+  &_blue &__title
+    +ff('demi')
+    +c($color-brand-2)
+    font-weight: bold
 
   +min(sm)
     display: flex
@@ -17,7 +22,7 @@
 
     &__title
       font-size: 24px
-      max-width: 50%
+      max-width: 60%
       margin-bottom: 0
 
     &__button

@@ -1,0 +1,27 @@
+<section class="section service-waste-variants">
+  <div class="container">
+    <div class="section-header">
+      <h3 class="section-header__title color-brand-2">{{ post.get_field('variants-title') }}</h3>
+    </div>
+    <div class="service-waste-variants__body">
+      <div class="icon-list-two-columns">
+        {% for item in post.get_field('variants-items') %}
+          {% include 'partial/icon.twig' with {
+            icon_class: 'icon_horizontal',
+            title: item.content,
+            image: item.image
+          } %}
+        {% endfor %}
+      </div>
+      <div class="service-waste-variants__content">{{ post.get_field('variants-content') }}</div>
+      <div class="attention attention_blue">
+        <div class="attention__title">{{ post.meta('variants-footer').title }}</div>
+        <div class="attention__button">
+          <a href="#contact" class="btn btn_block btn_brand-3 effect effect_bounce-top anchor">
+            {{ post.meta('variants-footer').button }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
