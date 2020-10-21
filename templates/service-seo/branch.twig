@@ -1,0 +1,18 @@
+<section class="section home-strategy">
+  {% for i in range(1, 4) %}
+    <img src="{{ theme.link }}/static/img/cloud.png" alt="Cloud" class="home-strategy__cloud home-strategy__cloud_{{ i }}">
+  {% endfor %}
+  <div class="container">
+    <div class="home-strategy__title">
+      {{ post.get_field('branch-title') }}
+    </div>
+    <div class="home-strategy__grid">
+      {% for item in post.get_field('branch-list') %}
+        <div class="home-strategy__item">
+          <div class="home-strategy__item-icon"></div>
+          <div class="home-strategy__item-content">{{ item.title }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
