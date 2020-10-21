@@ -1,15 +1,22 @@
-<section class="section service-waste-declaration">
+<section class="section">
   <div class="container">
     <div class="section-padding-content">
-      <div class="service-waste-declaration__content section-content">
-        {{ post.get_field('about-declaration-title') }}
+      <div class="section-header">
+        <h3 class="section-header__title color-brand-2">
+          {{ post.get_field('install-title') }}
+        </h3>
       </div>
-      <div class="attention attention_pink">
-        <div class="attention__title">{{ post.meta('variants-footer').title }}</div>
-        <div class="attention__button">
-          <a href="#contact" class="btn btn_block btn_brand-3 effect effect_bounce-top anchor">
-            {{ post.meta('variants-footer').button }}
-          </a>
+      <div class="section-content">
+        {{ post.get_field('install-content') }}
+      </div>
+      <div class="section-footer">
+        <div class="attention attention_pink">
+          <div class="attention__title">{{ post.meta('install-footer').title }}</div>
+          <div class="attention__button">
+            <a href="#contact" class="btn btn_block btn_brand-3 effect effect_bounce-top anchor">
+              {{ post.meta('install-footer').button }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
