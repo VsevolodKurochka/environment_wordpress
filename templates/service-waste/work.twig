@@ -1,0 +1,16 @@
+<section class="section service-atmosphere-order">
+  <div class="container">
+    <div class="section-header">
+      <h3 class="section-header__title color-brand-2">{{ post.get_field('work-title') }}</h3>
+    </div>
+    <div class="icon-list-two-columns">
+      {% for item in post.get_field('work-steps') %}
+        {% include 'partial/icon.twig' with {
+          icon_class: 'icon_horizontal',
+          title: item.content,
+          image: item.image
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

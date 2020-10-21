@@ -1,0 +1,16 @@
+.service-waste-declaration
+  &__content
+    +my(30px)
+    ul
+      display: grid
+      grid-gap: 20px
+  +min(md)
+    &__inner
+      +px(70px)
+
+    &__content
+      +my(60px)
+
+    &__content ul
+      grid-template-columns: repeat(2, 1fr)
+      grid-gap: 45px

@@ -1,0 +1,17 @@
+.section-content
+  ul
+    list-style: none
+    padding-left: 0
+    margin-left: 0
+
+    li
+      position: relative
+      padding-left: 45px
+      &:before
+        content: ''
+        +a(0, null, null, 0)
+        +size(31px)
+        +bgi('../img/check.svg')
+
+  +min(md)
+    font-size: 22px
