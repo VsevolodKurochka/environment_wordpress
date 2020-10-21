@@ -1,0 +1,17 @@
+<section class="section service-waste-declaration">
+  <div class="container">
+    <div class="section-padding-content">
+      <div class="service-waste-declaration__content section-content">
+        {{ post.get_field('about-declaration-title') }}
+      </div>
+      <div class="attention attention_pink">
+        <div class="attention__title">{{ post.meta('variants-footer').title }}</div>
+        <div class="attention__button">
+          <a href="#contact" class="btn btn_block btn_brand-3 effect effect_bounce-top anchor">
+            {{ post.meta('variants-footer').button }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

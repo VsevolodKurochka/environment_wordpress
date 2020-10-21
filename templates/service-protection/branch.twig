@@ -5,14 +5,15 @@
   <div class="container">
     <div class="section-header">
       <h3 class="section-header__title color-brand-2 home-strategy__title">
-        {{ post.get_field('strategy_title') }}
+        {{ post.get_field('branch-title') }}
       </h3>
     </div>
-    <div class="home-strategy__grid">
-      {% for item in post.get_field('strategy') %}
+
+    <div class="home-strategy__grid home-strategy__grid_4">
+      {% for item in post.get_field('branch-list') %}
         <div class="home-strategy__item">
           <div class="home-strategy__item-icon"></div>
-          <div class="home-strategy__item-content">{{ item.content }}</div>
+          <div class="home-strategy__item-content">{{ item.title }}</div>
         </div>
       {% endfor %}
     </div>

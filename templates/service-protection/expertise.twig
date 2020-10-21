@@ -1,0 +1,7 @@
+{% include 'modules/green-trees-two-columns.twig' with {
+  footer_title: post.meta('expertise-footer').title,
+  content_title: post.get_field('expertise-title'),
+  content: post.get_field('expertise-subtitle-1'),
+  content_second: post.get_field('expertise-subtitle-2'),
+  button_text: post.meta('expertise-footer').button
+} %}

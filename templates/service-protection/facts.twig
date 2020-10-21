@@ -1,0 +1,7 @@
+<section class="section">
+  <div class="container">
+    {% include 'partial/horizontal-list.twig' with {
+      items: post.get_field('facts-list')
+    } %}
+  </div>
+</section>

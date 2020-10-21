@@ -34,12 +34,6 @@
       animation-delay: -5s
       animation-duration: 10s
 
-  &__title
-    color: $color-brand-2
-    font-size: 19px
-    margin-bottom: 30px
-    +ff('demi')
-
   &__grid
     display: grid
     grid-gap: 20px
@@ -58,22 +52,28 @@
 
     &:nth-child(3) &-icon,
     &:nth-child(5) &-icon,
-    &:nth-child(10) &-icon
+    &:nth-child(10) &-icon,
+    &:nth-child(13) &-icon
       background-color: #ffd5b4
 
     &:nth-child(6) &-icon,
-    &:nth-child(7) &-icon
+    &:nth-child(7) &-icon,
+    &:nth-child(16) &-icon
       background-color: #2969c7
 
     &:nth-child(2) &-icon,
     &:nth-child(4) &-icon,
     &:nth-child(9) &-icon,
-    &:nth-child(11) &-icon
+    &:nth-child(11) &-icon,
+    &:nth-child(14) &-icon
       left: 0
       background-color: transparent
       +size(37px, 23px)
       +bgi('../img/mark.svg')
       border-radius: 0
+
+  &__grid_4 &__item:nth-child(even)
+    font-weight: normal
 
   +min(sm)
     &__title
@@ -86,9 +86,20 @@
     &__grid
       grid-template-columns: repeat(3, 1fr)
       grid-gap: 50px
+      &_4
+        grid-template-columns: repeat(4, 1fr)
+
+    &__grid_4 &__item:nth-child(6) &__item-icon,
+    &__grid_4 &__item:nth-child(12) &__item-icon
+      background-color: #ffd5b4
+
+    &__grid_4 &__item:nth-child(10) &__item-icon
+      background-color: $color-brand-1
+
+    &__grid_4 &__item:nth-child(5) &__item-icon
+      background-color: #2969c7
+
     &__item
       max-width: 300px
     &__title
-      +fs(48px)
       max-width: 75%
-      margin-bottom: 60px
