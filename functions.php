@@ -130,7 +130,8 @@ class StarterSite extends Timber\Site {
         $custom_colours = '
             "ffd5b4", "Желтый",
             "62bc62", "Зеленый",
-            "81223b", "Розовый"
+            "81223b", "Розовый",
+            "4a7fcc", "Синий"
         ';
 
         // build colour grid default+custom colors
