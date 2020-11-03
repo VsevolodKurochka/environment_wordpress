@@ -1,7 +1,7 @@
 .form-section
   position: relative
   overflow: hidden
-  +py(30px, 45px)
+  +py(45px, 45px)
 
   &__cloud
     +a()
@@ -60,6 +60,9 @@
     &:nth-child(3) svg path,
     &:nth-child(4) svg path
       fill: $color-brand-1
+
+  &__header
+    margin-bottom: 0
 
   +min(sm)
     +py(45px)
