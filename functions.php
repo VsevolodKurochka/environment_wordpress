@@ -73,7 +73,7 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
         add_action( 'wp_footer', array( $this, 'register_scripts' ) );
 
-        show_admin_bar(false);
+        //show_admin_bar(false);
 
         $this->add_options_page();
         $this->generate_menu();

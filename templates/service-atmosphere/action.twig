@@ -8,6 +8,7 @@
       <ul class="service-atmosphere-action__list">
         {% for item in post.get_field('action-categories') %}
           {% include 'partial/step-item.twig' with {
+            custom_class: 'service-atmosphere-action__item',
             number: item.number,
             title: item.title,
             content: item.subtitle,

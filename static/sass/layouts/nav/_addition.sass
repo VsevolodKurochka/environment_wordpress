@@ -21,7 +21,7 @@
         color: lighten(#812e60, 10%)
 
   &-translate
-    font-size: 0
+    font-size: 16px
     ul, li
       list-style: none
     .language-chooser
@@ -29,6 +29,15 @@
       align-items: center
       li:not(:last-child)
         margin-right: 10px
+    a
+      text-decoration: none
+      font-weight: 700
+      color: #848484
+      +tr()
+      &:hover
+        color: $color-brand-3
+    .active a
+      color: $color-brand-3
     img
       +tr()
       &:hover

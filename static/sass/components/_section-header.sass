@@ -7,16 +7,17 @@
     margin-bottom: 15px
 
   &__subtitle
-    +ff('demi')
-    +fs(20px)
-    font-weight: bold
+    +fs(16px)
+    font-weight: normal
 
   +min(sm)
     +mb(45px)
     &__title
       +fs(40px)
     &__subtitle
-      +fs(24px)
+      +fs(20px)
+    &__title + &__subtitle
+      margin-top: 30px
 
   +min(lg)
     +mb(60px)

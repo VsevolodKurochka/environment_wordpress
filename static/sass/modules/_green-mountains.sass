@@ -7,6 +7,11 @@
   +min(md)
     padding-top: 180px
 
+  .container
+    padding: 0
+    +min(sm)
+      +px(15px)
+
   &__inner
     position: relative
     padding: 15px 15px 30px 15px
@@ -21,16 +26,17 @@
         +size(calc(100% + 1px), 115px)
         background-position-x: 0
       +min(lg)
-        top: -154px
-        height: 155px
+        top: -150px
+        height: 151px
 
   &__plane
-    +a(-70px, null, null, -90px)
+    +a(-70px, null, null, -20px)
     +w(100px)
     animation: advantagePlaneMobile 150s linear 0s infinite normal forwards
 
   &__header
-    margin-bottom: 30px
+    margin-bottom: 15px
+
 
   &__title
     color: #ffd5b4

@@ -1,7 +1,7 @@
 .form-section
   position: relative
   overflow: hidden
-  +py(30px, 60px)
+  +py(30px, 45px)
 
   &__cloud
     +a()
@@ -39,8 +39,9 @@
     padding-left: 0
     margin-top: 30px
     margin-bottom: 0
-    color: #848484
-    font-size: 16px
+
+  &__subtitle
+    font-weight: bold
 
   &__advantage
     position: relative
@@ -61,7 +62,7 @@
       fill: $color-brand-1
 
   +min(sm)
-    +py(60px)
+    +py(45px)
 
     &__cloud
       display: block
@@ -88,11 +89,8 @@
       &_center
         align-items: center
 
-    &__advantages
-      grid-gap: 20px
-
   +min(md)
-    +py(180px, 120px)
+    +py(120px, 80px)
 
     &__grid
       grid-template-columns: 67% 30%
@@ -108,3 +106,9 @@
 
     &__advantages
       grid-template-columns: repeat(3, 1fr)
+      &_2
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 30px
+
+    &__advantage
+      font-size: 18px

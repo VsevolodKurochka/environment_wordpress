@@ -7,15 +7,26 @@
     padding-left: 50px
     padding-bottom: 45px
     +tr()
-    &:before
+    &:before,
+    &:after
       content: ''
       +a(5px, null, null, 7.5px)
       +size(15px, 100%)
+      z-index: -2
+
+    &:before
       background-color: #c8f9ff
+
+    &:after
+      background-color: $color-brand-3
+      z-index: -1
+      height: 0
+      transition: all ease 0.3s 0.5s
 
     &:last-child
       padding-bottom: 0
-      &:before
+      &:before,
+      &:after
         display: none
 
     &-title
@@ -58,6 +69,15 @@
           background-color: #c8f9ff
           opacity: 0
           z-index: -1
+
+  &__item.scroll-active:after
+    height: 100%
+
+  &__item.scroll-active &__item-indicator-circle
+    background-color: lighten($color-brand-3, 5%)
+    &:before
+      background-color: darken($color-brand-3, 5%)
+
   +min(sm)
     &__item
       display: grid
@@ -71,6 +91,9 @@
         top: 5px
         left: 37.5%
         width: 30px
+
+      &:after
+        display: none
 
       &-header
         text-align: right

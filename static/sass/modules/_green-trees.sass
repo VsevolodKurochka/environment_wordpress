@@ -3,9 +3,16 @@
   margin-bottom: 0
 
   &_offset
-    +pt(90px)
+    +pt(60px)
+    margin-top: 90px
+    +min(lg)
+      +pt(90px)
+      margin-top: 130px
+
+  .container
+    padding: 0
     +min(sm)
-      +pt(150px)
+      +px(15px)
 
   &__tree
     transform: scale3d(1,1,1) translateZ(0)
@@ -20,7 +27,7 @@
       z-index: 2
     &_3
       height: 70px
-      +a(-80px, null, null, 15px)
+      +a(-55px, null, null, 15px)
     &_4
       height: 90px
       +a(-80px, null, null, 65%)
@@ -40,23 +47,23 @@
 
   &__background
     position: relative
-    padding: 15px 15px 30px 15px
+    padding: 30px 15px 30px 15px
     background-color: $color-brand-1
     &:before
       content: ''
-      +a(-84px, null, null, 0.1px)
-      +size(calc(100% + 0.1px), 86px)
+      +a(-104px, null, null, 0.1px)
+      +size(100%, 109px)
       +bgi('../img/top-advantages-2.png', 75% 0)
       +min(md)
         +a(-115px, null, null, -1px)
         +size(calc(100% + 1px), 115px)
         background-position-x: 0
       +min(lg)
-        top: -151px
+        top: -150px
         height: 152px
 
   &__title
-    color: $color-white
+    color: #ffd5b4
 
   &__footer
     display: flex
@@ -78,7 +85,7 @@
       color: #ffd5b4
       +ff('demi')
     &_background
-      background-color: #0a0
+      background-color: darken($color-brand-1, 10%)
       padding: 30px 15px
     &_background &-tree
       display: none !important
@@ -87,7 +94,7 @@
     &__tree
       display: block
     &__background
-      padding: 35px 70px 45px 70px
+      padding: 60px 70px 45px 70px
     &__footer
       flex-direction: row
       align-items: center
@@ -101,8 +108,7 @@
         padding: 45px 70px
     &__footer_background &__footer
       &-title
-        font-size: 30px
-        max-width: 65%
+        max-width: 45%
         margin-bottom: 0
       &-button
         width: 30%
