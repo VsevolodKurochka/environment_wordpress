@@ -155,4 +155,10 @@ $(document).ready(function(){
 	);
 
 	initScrollItems($('[data-order-index]'));
+
+
+	document.addEventListener( 'wpcf7mailsent', function( event ) {
+		console.log(event);
+		$('#modal-success').addClass('modal_showing_in');
+	}, false );
 });	

@@ -1,22 +1,20 @@
 <section class="section section_bottom">
   <div class="container">
-    <div class="section-padding-content">
-      <div class="section-header">
-        <h3 class="section-header__title color-brand-2">
-          {{ post.get_field('install-title') }}
-        </h3>
-      </div>
-      <div class="section-content">
-        {{ post.get_field('install-content') }}
-      </div>
-      <div class="section-footer">
-        <div class="attention attention_pink">
-          <div class="attention__title">{{ post.meta('install-footer').title }}</div>
-          <div class="attention__button">
-            <a href="#contact" class="btn btn_block btn_brand-2 effect effect_bounce-top anchor">
-              {{ post.meta('install-footer').button }}
-            </a>
-          </div>
+    <div class="section-header">
+      <h3 class="section-header__title color-brand-2">
+        {{ post.get_field('install-title') }}
+      </h3>
+    </div>
+    <div class="section-content">
+      {{ post.get_field('install-content') }}
+    </div>
+    <div class="section-footer">
+      <div class="attention attention_pink">
+        <div class="attention__title">{{ post.meta('install-footer').title }}</div>
+        <div class="attention__button">
+          <a href="#contact" class="btn btn_block btn_brand-2 effect effect_bounce-top anchor">
+            {{ post.meta('install-footer').button }}
+          </a>
         </div>
       </div>
     </div>

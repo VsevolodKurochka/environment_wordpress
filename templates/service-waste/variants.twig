@@ -3,7 +3,7 @@
     <div class="section-header">
       <h3 class="section-header__title color-brand-2">{{ post.get_field('variants-title') }}</h3>
     </div>
-    <div class="section-padding-content service-waste-variants__body">
+    <div class="service-waste-variants__body">
       <div class="icon-list-two-columns">
         {% for item in post.get_field('variants-items') %}
           {% include 'partial/icon.twig' with {

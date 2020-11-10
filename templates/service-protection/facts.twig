@@ -1,17 +1,15 @@
 <section class="section">
   <div class="container">
-    <div class="section-padding-content">
-      {% include 'partial/horizontal-list.twig' with {
-        items: post.get_field('facts-list')
-      } %}
-      <div class="section-footer">
-        <div class="attention attention_pink">
-          <div class="attention__title">{{ post.meta('facts-footer').title }}</div>
-          <div class="attention__button">
-            <a href="#contact" class="btn btn_block btn_brand-2 effect effect_bounce-top anchor">
-              {{ post.meta('facts-footer').button }}
-            </a>
-          </div>
+    {% include 'partial/horizontal-list.twig' with {
+      items: post.get_field('facts-list')
+    } %}
+    <div class="section-footer">
+      <div class="attention attention_pink">
+        <div class="attention__title">{{ post.meta('facts-footer').title }}</div>
+        <div class="attention__button">
+          <a href="#contact" class="btn btn_block btn_brand-2 effect effect_bounce-top anchor">
+            {{ post.meta('facts-footer').button }}
+          </a>
         </div>
       </div>
     </div>

@@ -3,16 +3,14 @@
     <div class="section-header">
       <h3 class="section-header__title color-brand-2">{{ post.get_field('steps-title') }}</h3>
     </div>
-    <div class="section-padding-content">
-      <ul class="service-seo-steps__list">
-        {% for item in post.get_field('steps-list') %}
-          {% include 'partial/step-item.twig' with {
-            number: loop.index,
-            title: item.title,
-            content: item.content,
-          } %}
-        {% endfor %}
-      </ul>
-    </div>
+    <ul class="service-seo-steps__list">
+      {% for item in post.get_field('steps-list') %}
+        {% include 'partial/step-item.twig' with {
+          number: loop.index,
+          title: item.title,
+          content: item.content,
+        } %}
+      {% endfor %}
+    </ul>
   </div>
 </section>
