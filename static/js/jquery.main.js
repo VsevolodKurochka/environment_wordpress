@@ -158,7 +158,8 @@ $(document).ready(function(){
 
 
 	document.addEventListener( 'wpcf7mailsent', function( event ) {
-		console.log(event);
 		$('#modal-success').addClass('modal_showing_in');
 	}, false );
+
+	$("input[type='tel']").mask("(999) 999-99-99");
 });	

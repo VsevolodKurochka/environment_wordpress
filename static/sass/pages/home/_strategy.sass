@@ -46,32 +46,58 @@
       border-radius: 100%
       background-color: $color-brand-1
 
-    &:nth-child(3) &-icon,
-    &:nth-child(5) &-icon,
-    &:nth-child(10) &-icon,
-    &:nth-child(13) &-icon
-      background-color: #ffd5b4
+    +max(sm)
+      &:nth-child(3) &-icon,
+      &:nth-child(10) &-icon,
+      &:nth-child(7) &-icon,
+      &:nth-child(13) &-icon,
+      &:nth-child(11) &-icon
+        background-color: #ffd5b4
 
-    &:nth-child(6) &-icon,
-    &:nth-child(7) &-icon,
-    &:nth-child(16) &-icon
-      background-color: #2969c7
+      &:nth-child(4) &-icon,
+      &:nth-child(8) &-icon,
+      &:nth-child(16) &-icon,
+      &:nth-child(12) &-icon
+        background-color: #2969c7
 
-    &:nth-child(2) &-icon,
-    &:nth-child(4) &-icon,
-    &:nth-child(9) &-icon,
-    &:nth-child(11) &-icon,
-    &:nth-child(14) &-icon
-      left: 0
-      background-color: transparent
-      +size(37px, 23px)
-      +bgi('../img/mark.svg')
-      border-radius: 0
+      &:nth-child(2) &-icon,
+      &:nth-child(6) &-icon,
+      &:nth-child(10) &-icon,
+      &:nth-child(14) &-icon
+        left: 0
+        background-color: transparent
+        +size(37px, 23px)
+        +bgi('../img/mark.svg')
+        border-radius: 0
+
+    +min(sm)
+      &:nth-child(3) &-icon,
+      &:nth-child(5) &-icon,
+      &:nth-child(10) &-icon,
+      &:nth-child(13) &-icon
+        background-color: #ffd5b4
+
+      &:nth-child(6) &-icon,
+      &:nth-child(7) &-icon,
+      &:nth-child(16) &-icon
+        background-color: #2969c7
+
+      &:nth-child(2) &-icon,
+      &:nth-child(4) &-icon,
+      &:nth-child(9) &-icon,
+      &:nth-child(11) &-icon,
+      &:nth-child(14) &-icon
+        left: 0
+        background-color: transparent
+        +size(37px, 23px)
+        +bgi('../img/mark.svg')
+        border-radius: 0
 
   &__grid_4 &__item:nth-child(even)
     font-weight: normal
 
   +min(sm)
+
     &__grid
       grid-template-columns: repeat(2, 1fr)
       grid-gap: 30px

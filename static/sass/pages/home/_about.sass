@@ -154,15 +154,15 @@
       &_3 &-image
         left: 0
       &_1
-        top: 65px
-        left: 95px
+        top: 55px
+        left: 45px
         flex-direction: row-reverse
         text-align: right
         #{$item}-body
           margin-right: 15px
 
-      &_2
-        top: 65px
+      &_2service-rating-expertise__column
+        top: 55px
         left: 40px
         text-align: right
         align-items: flex-end
@@ -171,12 +171,21 @@
           max-width: 360px
 
       &_3
-        top: 0
+        top: -45px
         left: 61%
         align-items: baseline
         #{$item}-body
           position: relative
           top: -25px
+
+    html[lang="uk"] &__objects-item_1
+      left: 25px
+
+    html[lang="uk"] &__objects-item_2
+      top: 115px
+
+    html[lang="uk"] &__objects-item_3
+      top: -5px
 
   &__objects[data-emergence="visible"] &__objects-item-image
     animation: jello-horizontal 1.3s both cubic-bezier(.58,.3,.005,1)
@@ -188,7 +197,7 @@
   +min(lg)
     &__row
       grid-template-columns: 330px 370px
-      min-height: 500px
+
     &__river
       height: auto
       top: -32px
@@ -202,9 +211,6 @@
       font-size: 36px
       margin-bottom: 25px
     &__objects-item
-      &_2
-        left: 70px
       &_3
-        top: -55px
         left: 63%
         align-items: baseline

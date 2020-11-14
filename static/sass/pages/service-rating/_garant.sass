@@ -16,6 +16,15 @@
   &__image
     max-width: 200px
 
+
+  +max(sm)
+    .btn
+      max-width: 270px
+      +mx(auto)
+    html[lang="ru-RU"] &
+      .btn
+        max-width: 240px
+
   +min(sm)
     &__image
       max-width: none

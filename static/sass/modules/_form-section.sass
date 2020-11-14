@@ -64,6 +64,10 @@
   &__header
     margin-bottom: 0
 
+  +max(sm)
+    &__subtitle br
+      display: none
+
   +min(sm)
     +py(45px)
 
@@ -104,8 +108,6 @@
 
     &__subtitle
       margin-bottom: 50px
-      &_size
-        max-width: 420px
 
     &__advantages
       grid-template-columns: repeat(3, 1fr)
